@@ -60,10 +60,6 @@ public class MancalaModel
         }
 
         _isPlayerA = !_isPlayerA; //Next players turn
-        //After a player finishes their turn, reset the counters so the next player can still undo
-        _undoCounterA = 0;
-        _undoCounterB = 0;
-
     }
 
     /**
@@ -80,23 +76,23 @@ public class MancalaModel
         }
 
         //Stones in the starting pit, aka stones to be distributed
-        int stonesPickedUp = _mancalaBoard[row][column];
+        int stonesInHand = _mancalaBoard[row][column];
         //Save the state of the board before this turn
         copyBoardFromTo(_mancalaBoard,_previousBoard);
         //Player cannot start their turn in an empty pit
         //Player cannot move anything from the mancalas
-        if (stonesPickedUp == 0 || row == 6)
+        if (stonesInHand == 0 || row == 6)
         {
             return;
         }
 
         if (_isPlayerA)
         {
-            playerATurn(row, column, stonesPickedUp);
+            playerATurn(row, column, stonesInHand);
         }
         if (!_isPlayerA)
         {
-            playerBTurn(row, column, stonesPickedUp);
+            playerBTurn(row, column, stonesInHand);
         }
     }
 
@@ -149,19 +145,20 @@ public class MancalaModel
         else if (_mancalaBoard[row][column] == 1)
         {
             _mancalaBoard[row][column] = 0;
-            stonesPickedUp = 1 + _mancalaBoard[row+1][column];
+            stonesPickedUp = 1 + _mancalaBoard[row+1][5-column];
             //Pick up the one stone and the stones of the opposite pit
             //and drop them in player B's Mancala
+            _mancalaBoard[row+1][5-column] = 0;
             _mancalaBoard[0][6] = stonesPickedUp;
             stonesPickedUp = 0;
 
         }
 
-        //Pit is not empty, pick up stones inside and continue
+        /*Pit is not empty, pick up stones inside and continue
         else if (_mancalaBoard[row][column]>1)
-        {
+        {                                                                   //This rule is not in the requirements of this project.
             traverseBoard(row,column);
-        }
+        }*/
     }
 
     /**
@@ -185,7 +182,7 @@ public class MancalaModel
                 //Add one to the Mancala and go to the top rows first pit
                 _mancalaBoard[row][column]++;
                 row = 0;
-                column=0;                               // TODO
+                column=0;
                 stonesPickedUp--;
             }
 
@@ -221,17 +218,19 @@ public class MancalaModel
             // on the oppoiste side of that pit and place them into
             // players Mancala
             _mancalaBoard[row][column] = 0;
-            stonesPickedUp = 1 + _mancalaBoard[row - 1][column];
+            stonesPickedUp = 1 + _mancalaBoard[row - 1][5-column];
+            _mancalaBoard[row - 1][5-column] = 0;
             _mancalaBoard[1][6] = stonesPickedUp;
             stonesPickedUp = 0;
+
         }
 
-        //If the pit isnt empty, pick up all its stones and start
-        // distributing again
+        /*If the pit isnt empty, pick up all its stones and start
+         distributing again
         else if (_mancalaBoard[row][column] > 1)
-        {
+        {                                                           //This rule is not in the project requirements
             traverseBoard(row, column);
-        }
+        }*/
     }
 
     /**
@@ -266,8 +265,8 @@ public class MancalaModel
      */
     public void undoLastMove ()
     {
-        //Note: Players cant undo more than 3 times per turn
-        //They can't undo more than one move
+        //Note: Players cant undo more than 3 times in the entire game
+        //They can't undo more than one move consecutively
         if (_isPlayerA && _undoCounterA <3 )
         {
             copyBoardFromTo(_previousBoard,_mancalaBoard);

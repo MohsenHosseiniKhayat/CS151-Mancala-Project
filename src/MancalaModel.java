@@ -1,17 +1,18 @@
 import java.util.Arrays;
 
+import javax.swing.plaf.BorderUIResource;
+
 /**
  * Created by Mohsen Hosseini Khayat on 4/7/2017.
  */
 public class MancalaModel
 {
     private int[][] _mancalaBoard;
-    private boolean _isPlayerA;
-    private boolean _canUndoPlyrA = true;
-    private boolean _canUndoPlyrB = true;
-    private int _undoCounterA = 0;
-    private int _undoCounterB = 0;
+    private Player _currentPlayer;
     private int[][] _previousBoard;
+    private Player _playerA = new Player(1);
+    private Player _playerB = new Player(0);
+    private GameState _gameState = GameState.gameInProgress;
 
     /**
      * Sets up a Mancala model
@@ -22,7 +23,7 @@ public class MancalaModel
     public MancalaModel(int numberOfStones)
     {
         //Set the current player to player A
-        _isPlayerA = true;
+        _currentPlayer = _playerA;
 
         // 2 Rows, one for each player, 7 pits in each row
         //Note: The last element of each row is reserved for the players Mancalas
@@ -40,6 +41,12 @@ public class MancalaModel
         //Clear out Player A & B's Mancalas
         _mancalaBoard[0][6] = 0;            // Player B's Mancala
         _mancalaBoard[1][6] = 0;            //Player A's Mancala
+
+        //Allocate the board sides to the corresponding players
+        _playerA.setSide(_playerA.getRow(),_mancalaBoard);
+        _playerB.setSide(_playerB.getRow(),_mancalaBoard);
+
+
     }
 
     /**
@@ -47,19 +54,17 @@ public class MancalaModel
      * @param row The starting row index of the turn
      * @param column The starting column index of the turn
      */
-    public void takeTurn(int row, int column)
+    public void takeTurn(Player player,int row, int column)
     {
         traverseBoard(row, column);
-        if (_isPlayerA)
-        {
-            _canUndoPlyrA = true;
-        }
-        else
-        {
-            _canUndoPlyrB = true;
-        }
 
-        _isPlayerA = !_isPlayerA; //Next players turn
+        //Let the current player undo
+        player.setCanUndo(true);
+
+        //TODO CHANGE PLAYERS
+        // I think we need to call switchPlayers() after the player clicks the End turn button
+        // which would set the _currentPlayer to the other player
+
     }
 
     /**
@@ -67,7 +72,7 @@ public class MancalaModel
      * @param row The starting row index
      * @param column The starting column index
      */
-    public void traverseBoard(int row, int column)
+    private void traverseBoard(int row, int column)
     {
         //Must check to see if starting move is valid
         if (!firstMoveIsValid(row))
@@ -86,11 +91,11 @@ public class MancalaModel
             return;
         }
 
-        if (_isPlayerA)
+        if (_currentPlayer == _playerA)
         {
             playerATurn(row, column, stonesInHand);
         }
-        if (!_isPlayerA)
+        if (_currentPlayer == _playerB)
         {
             playerBTurn(row, column, stonesInHand);
         }
@@ -115,7 +120,7 @@ public class MancalaModel
             {
                 _mancalaBoard[row][column]++;
                 row = 1;
-                column = 0;
+                column = -1;
                 stonesPickedUp--;
             }
 
@@ -182,7 +187,7 @@ public class MancalaModel
                 //Add one to the Mancala and go to the top rows first pit
                 _mancalaBoard[row][column]++;
                 row = 0;
-                column=0;
+                column= -1;
                 stonesPickedUp--;
             }
 
@@ -232,7 +237,7 @@ public class MancalaModel
             traverseBoard(row, column);
         }*/
     }
-
+    
     /**
      * Evaluates the validity of the players opening move on their turn
      * @param rowIndex The row of the pit the move is starting from
@@ -242,12 +247,12 @@ public class MancalaModel
     {
         Boolean result = false;
         //Note: Remember row #2 (index =1 ) is players A side of the board
-        if (_isPlayerA && rowIndex == 1)
+        if (_currentPlayer == _playerA && rowIndex == 1)
         {
             //Player A is starting his/her turn in their respective pits
             result = true;
         }
-        else if (!_isPlayerA && rowIndex == 0)
+        else if (_currentPlayer == _playerB && rowIndex == 0)
         {
             //Player B is starting his/her turn in their respective pits
             result = true;
@@ -265,19 +270,19 @@ public class MancalaModel
      */
     public void undoLastMove ()
     {
-        //Note: Players cant undo more than 3 times in the entire game
+        //Note: Players cant undo more than 3 times in their current turn
         //They can't undo more than one move consecutively
-        if (_isPlayerA && _undoCounterA <3 )
+        if (_currentPlayer == _playerA && _currentPlayer.getUndoCounter() <3 )
         {
             copyBoardFromTo(_previousBoard,_mancalaBoard);
-            _undoCounterA++;
-            _canUndoPlyrA = false;
+            _playerA.incrementUndoCounter();
+            _playerA.setCanUndo(false);
         }
-        else if (!_isPlayerA && _undoCounterB < 3)
+        else if (_currentPlayer == _playerB && _currentPlayer.getUndoCounter() < 3)
         {
             copyBoardFromTo(_previousBoard,_mancalaBoard);
-            _undoCounterB++;
-            _canUndoPlyrB = false;
+            _playerB.incrementUndoCounter();
+            _playerB.setCanUndo(false);
         }
     }
 
@@ -303,5 +308,118 @@ public class MancalaModel
     public int getStonesAtPit (int i, int j)
     {
         return _mancalaBoard[i][j];
+    }
+
+    /**
+     * Returns current board
+     * @return  _mancalaBoard current board
+     */
+    public int [][] getMancalaBoard ()
+    {
+        return _mancalaBoard;
+    }
+
+    /**
+     * Returns board before most recent turn
+     * @return _previousBoard previous board
+     */
+    public int [][] getPreviousBoard ()
+    {
+        return _previousBoard;
+    }
+
+    /**
+     * Return the player whose turn it is
+     * @return _currentPlayer The current Player
+     */
+    public Player getCurrentPlayer ()
+    {
+        return _currentPlayer;
+    }
+
+    /**
+     * Set the current player
+     * @param player The player whose turn it will be
+     */
+    public void setCurrentPlayer (Player player) { _currentPlayer = player;}
+
+    /**
+     * Reports on the state of the game
+     * @param currentMancalaBoard The board as it stands right now
+     * @return state The state of the game can be inProgress, Victory for player A or Victory for player B
+     */
+    public boolean hasGameFinished (int [][] currentMancalaBoard)
+    {
+        boolean result = false;
+        if (_playerA.sideIsEmpty())
+        {
+            _gameState = GameState.playerAWon;
+            result = true;
+        }
+        else if (_playerB.sideIsEmpty())
+        {
+            _gameState = GameState.playerBWon;
+            result = true;
+        }
+
+        return result;
+    }
+
+    /**
+     * Prints the board, for testing purposes
+     */
+    public void printBoard ()
+    {
+        String result = "";
+        for (int i = 0; i<_mancalaBoard[0].length; i++)
+        {
+            result += _mancalaBoard[0][i] + " ";
+        }
+        result += "\n";
+        for (int i = 0; i<_mancalaBoard[0].length; i++)
+        {
+            result += (i) + " ";
+        }
+        result += "\n";
+        for (int i = 0; i<_mancalaBoard[0].length; i++)
+        {
+            result += _mancalaBoard[1][i] + " ";
+        }
+
+        System.out.println(result);
+    }
+
+    /**
+     * Returns the game state
+     * @return _gameState The state of the game
+     */
+    public GameState getGameState ()
+    {
+        return _gameState;
+    }
+
+    /**
+     * Hands over control to the other player
+     */
+    public void switchPlayer ()
+    {
+        if (_currentPlayer == _playerA)
+        {
+            //Reset their undo flag so they wont be able to immediately undo on their following turn
+            _currentPlayer.setCanUndo(false);
+            _currentPlayer.setUndoCounter(0);
+
+            //Then change the player
+            _currentPlayer = _playerB;
+        }
+        else
+        {
+            //Reset their undo flag so they wont be able to immediately undo on their following turn
+            _currentPlayer.setCanUndo(false);
+            _currentPlayer.setUndoCounter(0);
+
+            //Then change the player
+            _currentPlayer = _playerA;
+        }
     }
 }

@@ -1,5 +1,6 @@
 import java.awt.BasicStroke;
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
@@ -51,10 +52,11 @@ public class GUITest {
 				c = new GridBagConstraints();
 				c.gridx = col;
 				c.gridy = row;
-				c.fill = GridBagConstraints.BOTH;
+				c.fill = GridBagConstraints.NONE;
 				
 				MancalaPit pit = new MancalaPit(row, col);
 				mancalaPanel.add(pit, c);
+				mancalaPanel.setBorder(new StrokeBorder(new BasicStroke(1)));
 			}
 		}
 		
@@ -66,14 +68,14 @@ public class GUITest {
 		
 		buttonPanel.add(undoButton);
 		buttonPanel.add(endTurnButton);
+		buttonPanel.setBackground(Color.GRAY);
 		
 		mancalaFrame.add(mancalaPanel);
 		mancalaFrame.add(buttonPanel);
-
-		mancalaFrame.setPreferredSize(new Dimension(600, 400));
 		
 		mancalaFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		mancalaFrame.pack();
+		mancalaFrame.setMinimumSize(new Dimension(mancalaFrame.getWidth() + 100, mancalaFrame.getHeight() + 100));
 		mancalaFrame.setVisible(true);
 	}
 }

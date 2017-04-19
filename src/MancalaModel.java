@@ -8,10 +8,10 @@ import javax.swing.plaf.BorderUIResource;
 public class MancalaModel
 {
     private int[][] _mancalaBoard;
-    private Player _currentPlayer;
+    private Player  _currentPlayer;
     private int[][] _previousBoard;
-    private Player _playerA = new Player(1);
-    private Player _playerB = new Player(0);
+    private Player  _playerA = new Player(1);
+    private Player  _playerB = new Player(0);
     private GameState _gameState = GameState.gameInProgress;
 
     /**
@@ -423,3 +423,5 @@ public class MancalaModel
         }
     }
 }
+
+

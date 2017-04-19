@@ -16,22 +16,23 @@ import javax.swing.border.StrokeBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-public class MancalaPit extends JPanel implements ChangeListener{
+class MancalaPit extends JPanel implements ChangeListener{
 	/**
 	 * Constructor
 	 * @param row - the row of this pit
 	 * @param col
 	 */
-	public MancalaPit(int row, int col)
+	public MancalaPit(int row, int col, BoardStyle styleIn)
 	{
-		super();
 		this.row = row;
 		this.col = col;
+		style = styleIn;
 		
+		double pitWidth = style.getPitWidth();
 		if(col == 7)
-			setPreferredSize(new Dimension((int) PIT_WIDTH, (int) (2*PIT_WIDTH)));
+			setPreferredSize(new Dimension((int) pitWidth, (int) (2*pitWidth)));
 		else
-			setPreferredSize(new Dimension((int) PIT_WIDTH, (int) PIT_WIDTH));
+			setPreferredSize(new Dimension((int) pitWidth, (int) pitWidth));
 		
 		this.addMouseListener(new MouseAdapter()
 				{
@@ -45,29 +46,32 @@ public class MancalaPit extends JPanel implements ChangeListener{
 	public void paintComponent(Graphics g)
 	{
 		Graphics2D g2 = (Graphics2D) g;
-
-		g2.setStroke(new BasicStroke(5));
 		
-		Point2D.Double p1 = new Point2D.Double(GUTTER_WIDTH, PIT_WIDTH / 2);
-		Point2D.Double p2 = new Point2D.Double(GUTTER_WIDTH, getHeight() - PIT_WIDTH / 2);
+		double pitWidth = style.getPitWidth();
+		double gutterWidth = style.getGutterWidth();
+
+		g2.setStroke(style.getPitBorderStroke());
+		
+		Point2D.Double p1 = new Point2D.Double(gutterWidth, pitWidth / 2);
+		Point2D.Double p2 = new Point2D.Double(gutterWidth, getHeight() - pitWidth / 2);
 		Line2D.Double l1 = new Line2D.Double(p1, p2);
 		
-		Point2D.Double p3 = new Point2D.Double(PIT_WIDTH - GUTTER_WIDTH, PIT_WIDTH / 2);
-		Point2D.Double p4 = new Point2D.Double(PIT_WIDTH - GUTTER_WIDTH, getHeight() - PIT_WIDTH / 2);
+		Point2D.Double p3 = new Point2D.Double(pitWidth - gutterWidth, pitWidth / 2);
+		Point2D.Double p4 = new Point2D.Double(pitWidth - gutterWidth, getHeight() - pitWidth / 2);
 		Line2D.Double l2 = new Line2D.Double(p3, p4);
 		
-		Arc2D.Double a1 = new Arc2D.Double((double) GUTTER_WIDTH, 
-										   (double) GUTTER_WIDTH, 
-										   (double) PIT_WIDTH - 2 * GUTTER_WIDTH, 
-										   (double) PIT_WIDTH - 2 * GUTTER_WIDTH,
+		Arc2D.Double a1 = new Arc2D.Double((double) gutterWidth, 
+										   (double) gutterWidth, 
+										   (double) pitWidth - 2 * gutterWidth, 
+										   (double) pitWidth - 2 * gutterWidth,
 										   (double)0, 
 										   (double) 180, Arc2D.OPEN);
 		g2.draw(a1);
 		
-		Arc2D.Double a2 = new Arc2D.Double((double) GUTTER_WIDTH,
-										   (double) this.getHeight() - PIT_WIDTH + GUTTER_WIDTH,
-										   (double) PIT_WIDTH - 2 * GUTTER_WIDTH,
-										   (double) PIT_WIDTH - 2 * GUTTER_WIDTH,
+		Arc2D.Double a2 = new Arc2D.Double((double) gutterWidth,
+										   (double) this.getHeight() - pitWidth + gutterWidth,
+										   (double) pitWidth - 2 * gutterWidth,
+										   (double) pitWidth - 2 * gutterWidth,
 										   180.0, 
 										   180.0, 
 										   Arc2D.OPEN);
@@ -87,9 +91,7 @@ public class MancalaPit extends JPanel implements ChangeListener{
 	private int row;
 	private int col;
 	private int id;
-	private static double PIT_WIDTH = 90.0;
-	private static double GUTTER_WIDTH = 4;
 	private MancalaModel model;
-	
+	private BoardStyle style;
 
 }

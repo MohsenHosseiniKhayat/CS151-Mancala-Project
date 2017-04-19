@@ -31,6 +31,7 @@ public class MancalaBoard extends JFrame implements ChangeListener{
 	{
 		setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
 		JPanel mancalaPanel = new JPanel();
+		mancalaPanel.setBackground(style.getBGColor());
 		mancalaPanel.setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		c.gridx = 0;

@@ -24,9 +24,9 @@ public class GUITest {
 		highContrast.setBGColor(Color.WHITE);
 		highContrast.setPitBorderColor(Color.BLACK);
 		highContrast.setStoneColor(Color.BLACK);
-		highContrast.setPitBorderStrokeWidth(4);
+		highContrast.setPitBorderStrokeWidth(15);
 		highContrast.setStoneShape(new Ellipse2D.Double());
-		highContrast.setPitWidth(50);
+		highContrast.setPitWidth(200);
 
 		MancalaBoard board = new MancalaBoard(new MancalaModel(3), highContrast);	
 	}	

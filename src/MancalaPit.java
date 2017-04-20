@@ -27,6 +27,10 @@ class MancalaPit extends JPanel implements ChangeListener{
 	{
 		this.row = row;
 		this.col = col;
+		
+		final Integer localRow = row;
+		final Integer localCol = col;
+		this.col = col;
 		style = styleIn;
 		
 		double pitWidth = style.getPitWidth();
@@ -39,7 +43,7 @@ class MancalaPit extends JPanel implements ChangeListener{
 				{
 					public void mouseClicked(MouseEvent e)
 					{
-						System.out.printf("Clicked:\nRow: %d, Column: %d\n", row, col);
+						System.out.printf("Clicked:\nRow: %d, Column: %d\n", localRow, localCol);
 					}
 				});
 	}

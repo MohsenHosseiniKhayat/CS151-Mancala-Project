@@ -121,4 +121,9 @@ public class SimpleBoardStyle implements BoardStyle{
 	public void setPadding(double padding) {
 		this.padding = padding;
 	}
+
+	@Override
+	public Stone getStone() {
+		return new Stone(0, 0, pitWidth/4);
+	}
 }

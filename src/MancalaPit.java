@@ -16,6 +16,7 @@ import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
+import java.util.Random;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -30,10 +31,11 @@ class MancalaPit extends JPanel implements ChangeListener{
 	 * @param row - the row of this pit
 	 * @param col
 	 */
-	public MancalaPit(int row, int col, BoardStyle styleIn)
+	public MancalaPit(int row, int col, MancalaModel model, BoardStyle styleIn)
 	{
 		this.row = row;
 		this.col = col;
+		this.model = model;
 		
 		style = styleIn;		
 		
@@ -45,18 +47,21 @@ class MancalaPit extends JPanel implements ChangeListener{
 		
 		JPanel stonesPanel = new JPanel();
 		
-		GridLayout stonesLayout = new GridLayout(8, 6);
-		stonesLayout.setHgap(8);
-		stonesLayout.setVgap(3);
-		stonesPanel.setLayout(stonesLayout);
+		//GridLayout stonesLayout = new GridLayout(8, 6);
+		//stonesLayout.setHgap(8);
+		//stonesLayout.setVgap(3);
+		//stonesPanel.setLayout(stonesLayout);
 		
-		ImageIcon stoneIcon = new ImageIcon("stoneIconSmall.png");
-		for(int i = 0; i < 48; i++)
+		//ImageIcon stoneIcon = new ImageIcon("stoneIconSmall.png");
+		
+		for(int i = 0; i < numStones; i++)
 		{
-			JLabel stone = new JLabel();
-			stone.setIcon(stoneIcon);
-			stone.setSize(5,5);
-			stone.setForeground(new Color (00, 00, 255));
+			Stone stone = new Stone(i, i, pitWidth);
+			int d = (int) (pitWidth / 2 - stone.getWidth() / 2);
+			Random random = new Random();
+			double theta = random.nextDouble();
+			stone.setX((int)(d * Math.cos(theta)));
+			stone.setY((int)(d * Math.sin(theta)));
 			stonesPanel.add(stone);
 		}
 
@@ -70,7 +75,10 @@ class MancalaPit extends JPanel implements ChangeListener{
 				{
 					public void mouseClicked(MouseEvent e)
 					{
+						model.printBoard();
 						System.out.printf("Clicked:\nRow: %d, Column: %d\n", row, col);
+						model.takeTurn(model.getCurrentPlayer(), row, col);
+						model.printBoard();
 					}
 				});
 	}

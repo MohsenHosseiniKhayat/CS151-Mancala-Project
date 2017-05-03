@@ -18,8 +18,6 @@ public interface BoardStyle
 	public void		setPitBorderStrokeWidth(int newStrokeWidth);
 	public Stroke	getPitBorderStroke();
 	
-	
-	
 	public void		setStoneColor(Color newStoneColor);
 	public Color	getStoneColor();
 	
@@ -33,4 +31,6 @@ public interface BoardStyle
 	
 	public double	getPadding();
 	public void		setPadding(double padding);
+	
+	public Stone	getStone();
 }

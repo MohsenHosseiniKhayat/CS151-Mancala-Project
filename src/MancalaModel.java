@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import javax.swing.plaf.BorderUIResource;
@@ -45,8 +46,6 @@ public class MancalaModel
         //Allocate the board sides to the corresponding players
         _playerA.setSide(_playerA.getRow(),_mancalaBoard);
         _playerB.setSide(_playerB.getRow(),_mancalaBoard);
-
-
     }
 
     /**
@@ -351,17 +350,18 @@ public class MancalaModel
     public boolean hasGameFinished (int [][] currentMancalaBoard)
     {
         boolean result = false;
-        if (_playerA.sideIsEmpty())
+        if (_playerA.sideIsEmpty() || _playerB.sideIsEmpty())
         {
-            _gameState = GameState.playerAWon;
-            result = true;
+            if (_playerA.getMancalaStones() > _playerB.getMancalaStones())
+            {
+                result = true;
+                _gameState = GameState.playerAWon;
+            }
+            else
+            {
+                _gameState = GameState.playerBWon;
+            }
         }
-        else if (_playerB.sideIsEmpty())
-        {
-            _gameState = GameState.playerBWon;
-            result = true;
-        }
-
         return result;
     }
 
@@ -421,6 +421,27 @@ public class MancalaModel
             //Then change the player
             _currentPlayer = _playerA;
         }
+    }
+
+    /**
+     * Resets the board state for a new game
+     */
+    public void resetBoard ()
+    {
+        //Reset the board arrays
+        int[][] emptyBoard = {{0,0,0,0,0,0,0},{0,0,0,0,0,0,0}} ;
+        _currentPlayer = _playerA;
+        _gameState = GameState.gameInProgress;
+        copyBoardFromTo(emptyBoard,_mancalaBoard);
+        copyBoardFromTo(emptyBoard,_previousBoard);
+
+        //Reset the flags and Mancalas
+        _playerA.setMancalaStones(0);
+        _playerB.setMancalaStones(0);
+        _playerA.setCanUndo(false);
+        _playerB.setCanUndo(false);
+        _playerA.setUndoCounter(0);
+        _playerB.setUndoCounter(0);
     }
 }
 

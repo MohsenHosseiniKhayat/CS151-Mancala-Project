@@ -44,6 +44,7 @@ class MancalaPit extends JPanel implements ChangeListener{
 					public void mouseClicked(MouseEvent e)
 					{
 						System.out.printf("Clicked:\nRow: %d, Column: %d\n", localRow, localCol);
+
 					}
 				});
 	}
@@ -95,6 +96,13 @@ class MancalaPit extends JPanel implements ChangeListener{
 		// TODO Auto-generated method stub
 		
 	}
+
+	public void setNumStones (int numStones)
+	{
+		this.numStones = numStones;
+	}
+
+	public int getNumStones () {return numStones;}
 
 	private int numStones;
 	private int row;

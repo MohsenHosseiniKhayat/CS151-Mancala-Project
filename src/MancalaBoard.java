@@ -4,6 +4,8 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -74,7 +76,25 @@ public class MancalaBoard extends JFrame implements ChangeListener{
 		
 		JButton undoButton = new JButton("Undo Move");
 		JButton endTurnButton = new JButton("End Turn");
-		
+
+		undoButton.addActionListener(new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                model.undoLastMove();
+            }
+        });
+		endTurnButton.addActionListener(new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                model.switchPlayer();
+            }
+        });
+
+		undoButton.setEnabled(false);
 		buttonPanel.add(undoButton);
 		buttonPanel.add(endTurnButton);
 		buttonPanel.setBackground(Color.GRAY);

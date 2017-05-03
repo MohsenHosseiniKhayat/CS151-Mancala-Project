@@ -14,6 +14,7 @@ public class MancalaModel
     private Player  _playerA = new Player(1);
     private Player  _playerB = new Player(0);
     private GameState _gameState = GameState.gameInProgress;
+    private ArrayList<MancalaPit> _mancalaPits;
 
     /**
      * Sets up a Mancala model
@@ -23,6 +24,7 @@ public class MancalaModel
      */
     public MancalaModel(int numberOfStones)
     {
+        _mancalaPits = new ArrayList<MancalaPit>();
         //Set the current player to player A
         _currentPlayer = _playerA;
 
@@ -56,7 +58,7 @@ public class MancalaModel
     public void takeTurn(Player player,int row, int column)
     {
         traverseBoard(row, column);
-
+        notifyPits();
         //Let the current player undo
         player.setCanUndo(true);
 
@@ -276,12 +278,14 @@ public class MancalaModel
             copyBoardFromTo(_previousBoard,_mancalaBoard);
             _playerA.incrementUndoCounter();
             _playerA.setCanUndo(false);
+            notifyPits();
         }
         else if (_currentPlayer == _playerB && _currentPlayer.getUndoCounter() < 3)
         {
             copyBoardFromTo(_previousBoard,_mancalaBoard);
             _playerB.incrementUndoCounter();
             _playerB.setCanUndo(false);
+            notifyPits();
         }
     }
 
@@ -442,6 +446,33 @@ public class MancalaModel
         _playerB.setCanUndo(false);
         _playerA.setUndoCounter(0);
         _playerB.setUndoCounter(0);
+    }
+
+    /**
+     * Returns the mancala pit observers
+     * @return _mancalaPits The pit observers
+     */
+    public ArrayList<MancalaPit> getMancalaPits() { return _mancalaPits;}
+
+    /**
+     * Adds an observer to the pit observers
+     * @param pit The observer to add
+     */
+    public void attach(MancalaPit pit)
+    {
+        _mancalaPits.add(pit);
+    }
+
+    public void notifyPits ()
+    {
+        int num = 0;
+        for (int i = 0; i<2; i++)
+        {
+            for (int j = 0; j<7; j++)
+            {
+                _mancalaPits.get(num++).setNumStones(_mancalaBoard[i][j]);
+            }
+        }
     }
 }
 

@@ -3,6 +3,7 @@ import java.awt.Color;
 import java.awt.Shape;
 import java.awt.Stroke;
 
+import javax.swing.Icon;
 import javax.swing.border.Border;
 import javax.swing.border.StrokeBorder;
 
@@ -11,12 +12,14 @@ public class SimpleBoardStyle implements BoardStyle{
 	private Color	BGColor;
 	private Color	sitBorderColor;
 	private Color	stoneColor;
-	private Color	pitBorderColor;
+	private Color	activePitBorderColor;
+	private Color	inactivePitBorderColor;
 	private Stroke	pitStroke;
-	private Shape	stoneShape;
+	private Icon	stoneIcon;
 	private double	pitWidth;
 	private double	gutterWidth;
 	private int		strokeWidth;
+	private double  padding;
 	
 	
 	@Override
@@ -32,15 +35,27 @@ public class SimpleBoardStyle implements BoardStyle{
 	}
 	
 	@Override
-	public void setPitBorderColor(Color newPitBorderColor) {
-		pitBorderColor = newPitBorderColor;
+	public void setActivePitBorderColor(Color newPitBorderColor) {
+		activePitBorderColor = newPitBorderColor;
 		return;
 	}
 	
 	@Override
-	public Color getPitBorderColor()
+	public Color getActivePitBorderColor()
 	{
-		return pitBorderColor;
+		return activePitBorderColor;
+	}
+	
+	@Override
+	public void setInactivePitBorderColor(Color newPitBorderColor) {
+		inactivePitBorderColor = newPitBorderColor;
+		return;
+	}
+	
+	@Override
+	public Color getInactivePitBorderColor()
+	{
+		return inactivePitBorderColor;
 	}
 	
 	@Override
@@ -70,14 +85,15 @@ public class SimpleBoardStyle implements BoardStyle{
 	}
 	
 	@Override
-	public void setStoneShape(Shape newShape) {
-		stoneShape = newShape;
+	public void setStoneIcon(Icon iconIn) {
+		stoneIcon = iconIn;
+		return;
 	}
 	
 	@Override
-	public Shape getStoneShape()
+	public Icon getStoneIcon()
 	{
-		return stoneShape;
+		return stoneIcon;
 	}
 	
 	@Override
@@ -93,6 +109,16 @@ public class SimpleBoardStyle implements BoardStyle{
 
 	@Override
 	public double getGutterWidth() {
-		return (double) strokeWidth / 2 + 1;
+		return (double) strokeWidth / 2 + padding;
+	}
+
+	@Override
+	public double getPadding() {
+		return padding;
+	}
+
+	@Override
+	public void setPadding(double padding) {
+		this.padding = padding;
 	}
 }

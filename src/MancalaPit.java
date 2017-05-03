@@ -1,7 +1,12 @@
 import java.awt.BasicStroke;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.ComponentOrientation;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.GridLayout;
 import java.awt.RenderingHints;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -12,6 +17,8 @@ import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.StrokeBorder;
 import javax.swing.event.ChangeEvent;
@@ -27,13 +34,37 @@ class MancalaPit extends JPanel implements ChangeListener{
 	{
 		this.row = row;
 		this.col = col;
-		style = styleIn;
+		
+		style = styleIn;		
 		
 		double pitWidth = style.getPitWidth();
 		if(col == 7)
 			setPreferredSize(new Dimension((int) pitWidth, (int) (2*pitWidth)));
 		else
 			setPreferredSize(new Dimension((int) pitWidth, (int) pitWidth));
+		
+		JPanel stonesPanel = new JPanel();
+		
+		GridLayout stonesLayout = new GridLayout(8, 6);
+		stonesLayout.setHgap(8);
+		stonesLayout.setVgap(3);
+		stonesPanel.setLayout(stonesLayout);
+		
+		ImageIcon stoneIcon = new ImageIcon("stoneIconSmall.png");
+		for(int i = 0; i < 48; i++)
+		{
+			JLabel stone = new JLabel();
+			stone.setIcon(stoneIcon);
+			stone.setSize(5,5);
+			stone.setForeground(new Color (00, 00, 255));
+			stonesPanel.add(stone);
+		}
+
+		add(stonesPanel);
+		
+		
+		stonesPanel.setOpaque(false);
+		stonesPanel.repaint();
 		
 		this.addMouseListener(new MouseAdapter()
 				{

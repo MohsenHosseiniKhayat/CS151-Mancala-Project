@@ -11,6 +11,8 @@ import java.awt.event.MouseListener;
 import java.awt.geom.Ellipse2D;
 
 import javax.swing.BoxLayout;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -22,11 +24,13 @@ public class GUITest {
 	{
 		SimpleBoardStyle highContrast = new SimpleBoardStyle();
 		highContrast.setBGColor(Color.WHITE);
-		highContrast.setPitBorderColor(Color.BLACK);
+		highContrast.setActivePitBorderColor(Color.BLUE);
+		highContrast.setInactivePitBorderColor(Color.GRAY);
 		highContrast.setStoneColor(Color.BLACK);
 		highContrast.setPitBorderStrokeWidth(15);
-		highContrast.setStoneShape(new Ellipse2D.Double());
+		highContrast.setStoneIcon(new ImageIcon("stoneIcon.png"));
 		highContrast.setPitWidth(200);
+		highContrast.setPadding(2.0);
 
 		MancalaBoard board = new MancalaBoard(new MancalaModel(3), highContrast);	
 	}	

@@ -26,8 +26,7 @@ class MancalaPit extends JPanel implements ChangeListener{
 		this.col = col;
 		this.model = model;
 		this.stones = new ArrayList<Stone>();
-
-		model.attach(this);
+		this.active = true;
 		
 		style = styleIn;	
 		random = new Random();
@@ -53,10 +52,13 @@ class MancalaPit extends JPanel implements ChangeListener{
 				{
 					public void mouseClicked(MouseEvent e)
 					{
-						System.out.print(model.toString());
-						System.out.printf("Clicked:\nRow: %d, Column: %d\n", row, col);
-						model.takeTurn(model.getCurrentPlayer(), row, col);
-						System.out.print(model.toString());
+						if(active)
+						{
+							System.out.print(model.toString());
+							System.out.printf("Clicked:\nRow: %d, Column: %d\n", row, col);
+							model.takeTurn(model.getCurrentPlayer(), row, col);
+							System.out.print(model.toString());
+						}
 					}
 				});
 	}
@@ -127,22 +129,31 @@ class MancalaPit extends JPanel implements ChangeListener{
 		}
 		paintComponent(getGraphics());
 	}
-
+	/*
 	/**
 	 * Returns the number of stones the mancala pit has and will draw
 	 * @param numStones The number of stones in the pit
-	 */
+	 * /
 	public void setNumStones (int numStones)
 	{
 		this.numStones = numStones;
 	}
+	
+	
 
 	/**
 	 * Returns the number of stones in the mancala pit
 	 * @return numstones The number of stones in the mancala pit
-	 */
+	 * /
 	public int getNumStones () {return numStones;}
-	private int numStones;
+	 */
+	
+	public void setActive(boolean value)
+	{
+		active = value;
+	}
+	
+	//private int numStones;
 	private int row;
 	private int col;
 	private int id;
@@ -150,5 +161,6 @@ class MancalaPit extends JPanel implements ChangeListener{
 	private BoardStyle style;
 	private ArrayList<Stone> stones;
 	private static Random random;
-
+	
+	private boolean active;
 }

@@ -25,8 +25,12 @@ class MancalaPit extends JPanel implements ChangeListener{
 		this.row = row;
 		this.col = col;
 		this.model = model;
+		this.stones = new ArrayList<Stone>();
+
+		model.attach(this);
 		
-		style = styleIn;		
+		style = styleIn;	
+		random = new Random();
 		
 		double pitWidth = style.getPitWidth();
 		if(col == 7)
@@ -34,33 +38,25 @@ class MancalaPit extends JPanel implements ChangeListener{
 		else
 			setPreferredSize(new Dimension((int) pitWidth, (int) pitWidth));
 		
-		JPanel stonesPanel = new JPanel();
-		
-		for(int i = 0; i < numStones; i++)
+		for(int i = 0; i < model.getStonesAtPit(row, col); i++)
 		{
-			Stone stone = new Stone(i, i, pitWidth);
-			int d = (int) (pitWidth / 2 - stone.getWidth() / 2);
-			Random random = new Random();
-			double theta = random.nextDouble();
-			stone.setX((int)(d * Math.cos(theta)));
-			stone.setY((int)(d * Math.sin(theta)));
-			stonesPanel.add(stone);
-		}
+			Stone stone = new Stone(0, 0, getWidth() / 5);
+			int d = (int) (random.nextDouble() * (getWidth() / 2 - stone.getWidth()));
 
-		add(stonesPanel);
-		
-		
-		stonesPanel.setOpaque(false);
-		stonesPanel.repaint();
+			double theta = random.nextDouble() * 2 * Math.PI;
+			stone.setX((int)(this.getWidth()  / 2 + d * Math.cos(theta) - stone.getWidth() / 2 - style.getGutterWidth()));
+			stone.setY((int)(this.getHeight() / 2 + d * Math.sin(theta) - stone.getWidth() / 2 - style.getGutterWidth()));
+			stones.add(stone);
+		}
 		
 		this.addMouseListener(new MouseAdapter()
 				{
 					public void mouseClicked(MouseEvent e)
 					{
-						model.printBoard();
+						System.out.print(model.toString());
 						System.out.printf("Clicked:\nRow: %d, Column: %d\n", row, col);
 						model.takeTurn(model.getCurrentPlayer(), row, col);
-						model.printBoard();
+						System.out.print(model.toString());
 					}
 				});
 	}
@@ -75,6 +71,9 @@ class MancalaPit extends JPanel implements ChangeListener{
 		
 		double pitWidth = style.getPitWidth();
 		double gutterWidth = style.getGutterWidth();
+		
+		g2.setBackground(style.getBGColor());
+		g2.clearRect(0, 0, this.getWidth(), this.getHeight());
 
 		g2.setStroke(style.getPitBorderStroke());
 		
@@ -105,11 +104,28 @@ class MancalaPit extends JPanel implements ChangeListener{
 		
 		g2.draw(l1);
 		g2.draw(l2);
+		
+		for(Stone s: stones)
+		{
+			s.paintComponent(g2);
+		}
 	}
 	
 	@Override
 	public void stateChanged(ChangeEvent arg0) {
-		
+		ArrayList<Stone> oldStones = stones;
+		stones = new ArrayList<Stone>();
+		for(int i = 0; i < model.getStonesAtPit(row, col); i++)
+		{
+			Stone stone = new Stone(0, 0, getWidth() / 5);
+			int d = (int) (random.nextDouble() * (getWidth() / 2 - stone.getWidth()));
+
+			double theta = random.nextDouble() * 2 * Math.PI;
+			stone.setX((int)(this.getWidth()  / 2 + d * Math.cos(theta) - stone.getWidth() / 2 - style.getGutterWidth()));
+			stone.setY((int)(this.getHeight() / 2 + d * Math.sin(theta) - stone.getWidth() / 2 - style.getGutterWidth()));
+			stones.add(stone);
+		}
+		paintComponent(getGraphics());
 	}
 
 	/**
@@ -126,8 +142,6 @@ class MancalaPit extends JPanel implements ChangeListener{
 	 * @return numstones The number of stones in the mancala pit
 	 */
 	public int getNumStones () {return numStones;}
-//>>>>>>> branch 'master' of https://github.com/MohsenHosseiniKhayat/CS151-Mancala-Project
-
 	private int numStones;
 	private int row;
 	private int col;
@@ -135,5 +149,6 @@ class MancalaPit extends JPanel implements ChangeListener{
 	private MancalaModel model;
 	private BoardStyle style;
 	private ArrayList<Stone> stones;
+	private static Random random;
 
 }

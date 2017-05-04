@@ -1,13 +1,12 @@
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Shape;
 import java.awt.geom.Ellipse2D;
 
-import javax.swing.Icon;
+import javax.swing.JComponent;
 
-public class Stone extends Component{
+public class Stone extends JComponent{
 	private int x;
 	private int y;
 	private int width;
@@ -70,7 +69,7 @@ public class Stone extends Component{
 	public void paintComponent(Graphics g)
 	{
 		Graphics2D g2 = (Graphics2D) g;
-		
+		Ellipse2D.Double shape = new Ellipse2D.Double(x, y, width, height);
 		g2.setColor(fillColor);
 		g2.fill(shape);
 		g2.setColor(strokeColor);

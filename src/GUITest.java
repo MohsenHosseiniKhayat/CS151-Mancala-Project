@@ -3,6 +3,8 @@ import javax.swing.ImageIcon;
 
 public class GUITest {
 
+	private static MancalaBoard board;
+
 	public static void main(String[] args)
 	{
 		SimpleBoardStyle highContrast = new SimpleBoardStyle();
@@ -11,11 +13,11 @@ public class GUITest {
 		highContrast.setInactivePitBorderColor(Color.GRAY);
 		highContrast.setStoneColor(Color.BLACK);
 		highContrast.setPitBorderStrokeWidth(15);
-		highContrast.setStoneIcon(new ImageIcon("stoneIcon.png"));
+		//highContrast.setStoneIcon(new ImageIcon("stoneIcon.png"));
 		highContrast.setPitWidth(200);
 		highContrast.setPadding(2.0);
 
-		MancalaBoard board = new MancalaBoard(new MancalaModel(3), highContrast);	
+		board = new MancalaBoard(new MancalaModel(3), highContrast);	
 	}	
 
 }

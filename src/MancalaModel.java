@@ -503,4 +503,24 @@ public class MancalaModel
      * @return True if turn ended, false otherwise
      */
     public boolean getEndOfTurn () {return _endOfTurn;}
+    
+    public String toString()
+    {
+    	String boardString = "\n   ";
+    	for(int i = 5; i >= 0; i--)
+    	{
+    		boardString += "[" + _mancalaBoard[0][i] + "]";
+    	}
+    	
+    	boardString += "\n[" + _mancalaBoard[0][6] 
+    			+ "]" + "                  "
+    			+ "[" + _mancalaBoard[1][6] + "]\n B ";
+    	
+    	for(int i = 0; i <= 5; i++)
+    	{
+    		boardString += "[" + _mancalaBoard[1][i] + "]";
+    	}
+    	boardString += " A \n";
+    	return boardString;
+    }
 }

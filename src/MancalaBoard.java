@@ -44,8 +44,8 @@ public class MancalaBoard extends JFrame implements ChangeListener{
 		c.gridheight = 2;
 		c.fill = GridBagConstraints.BOTH;
 		
-		MancalaPit mB = new MancalaPit(0, 7, model, style);
-		model.attach(this);
+		MancalaPit mB = new MancalaPit(0, 6, model, style);
+		model.attach(mB);
 		mancalaPanel.add(mB, c);
 		
 		c = new GridBagConstraints();
@@ -55,25 +55,38 @@ public class MancalaBoard extends JFrame implements ChangeListener{
 		c.gridheight = 2;
 		c.fill = GridBagConstraints.BOTH;
 		
-		MancalaPit mA = new MancalaPit(1, 7, model, style);
-		model.attach(this);
+		MancalaPit mA = new MancalaPit(1, 6, model, style);
+		model.attach(mA);
 		mancalaPanel.add(mA, c);
 
-		for(int row = 0; row < 2; row++)
+		int row = 0;
+
+		for(int col = 5; col >= 0; col--)
 		{
-			for(int col = 1; col < 7; col++)
-			{
-				c = new GridBagConstraints();
-				c.gridx = col;
-				c.gridy = row;
-				c.fill = GridBagConstraints.NONE;
+			c = new GridBagConstraints();
+			c.gridx = col + 1;
+			c.gridy = row;
+			c.fill = GridBagConstraints.NONE;
 
 
-				MancalaPit pit = new MancalaPit(row, col, model, style);
-                //Check this out please, I'm not sure if this is right
-				model.attach(this);
-				mancalaPanel.add(pit, c);
-			}
+			MancalaPit pit = new MancalaPit(row, col, model, style);
+			model.attach(pit);
+			mancalaPanel.add(pit, c);
+		}
+		
+		row = 1;
+		for(int col = 0; col <= 5; col++)
+		{
+			c = new GridBagConstraints();
+			c.gridx = col + 1;
+			c.gridy = row;
+			c.fill = GridBagConstraints.NONE;
+
+
+			MancalaPit pit = new MancalaPit(row, col, model, style);
+            //Check this out please, I'm not sure if this is right
+			model.attach(pit);
+			mancalaPanel.add(pit, c);
 		}
 		
 		mancalaPanel.setBorder(new StrokeBorder(new BasicStroke(1)));

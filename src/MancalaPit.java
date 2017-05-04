@@ -21,7 +21,8 @@ class MancalaPit extends JPanel implements ChangeListener{
 	/**
 	 * Constructor
 	 * @param row - the row of this pit
-	 * @param col
+	 * @param col - the column of this pit
+     * @param styleIn - The graphical style to use for display
 	 */
 	public MancalaPit(int row, int col, BoardStyle styleIn)
 	{
@@ -86,9 +87,10 @@ class MancalaPit extends JPanel implements ChangeListener{
 										   180.0, 
 										   Arc2D.OPEN);
 		g2.draw(a2);
-		
+
 		g2.draw(l1);
 		g2.draw(l2);
+
 	}
 	
 	@Override
@@ -97,11 +99,19 @@ class MancalaPit extends JPanel implements ChangeListener{
 		
 	}
 
+	/**
+	 * Returns the number of stones the mancala pit has and will draw
+	 * @param numStones The number of stones in the pit
+	 */
 	public void setNumStones (int numStones)
 	{
 		this.numStones = numStones;
 	}
 
+	/**
+	 * Returns the number of stones in the mancala pit
+	 * @return numstones The number of stones in the mancala pit
+	 */
 	public int getNumStones () {return numStones;}
 
 	private int numStones;

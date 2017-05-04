@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4229f054-4b79-4a71-9b60-db3705e7f17c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Mancala/MancalaModel.class" afterPath="$PROJECT_DIR$/out/production/Mancala/MancalaModel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Mancala/Player.class" afterPath="$PROJECT_DIR$/out/production/Mancala/Player.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MancalaBoard.java" afterPath="$PROJECT_DIR$/src/MancalaBoard.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MancalaModel.java" afterPath="$PROJECT_DIR$/src/MancalaModel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MancalaPit.java" afterPath="$PROJECT_DIR$/src/MancalaPit.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MancalaTest.java" afterPath="$PROJECT_DIR$/src/MancalaTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,22 +21,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MancalaModel.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MancalaModel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MancalaModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-426">
-              <caret line="26" column="51" lean-forward="false" selection-start-line="26" selection-start-column="51" selection-end-line="26" selection-end-column="51" />
+            <state relative-caret-position="1698">
+              <caret line="471" column="29" lean-forward="true" selection-start-line="471" selection-start-column="29" selection-end-line="471" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;class#MancalaModel#0" expanded="false" />
                 <element signature="docComment;method#MancalaModel#0;class#MancalaModel#0" expanded="false" />
                 <element signature="docComment;method#takeTurn#0;class#MancalaModel#0" expanded="false" />
+                <element signature="method#takeTurn#0;class#MancalaModel#0" expanded="false" />
                 <element signature="docComment;method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
                 <element signature="method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
                 <element signature="docComment;method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
-                <element signature="method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
                 <element signature="docComment;method#playerATurn#0;class#MancalaModel#0" expanded="false" />
-                <element signature="method#playerATurn#0;class#MancalaModel#0" expanded="false" />
                 <element signature="docComment;method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
                 <element signature="method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
                 <element signature="docComment;method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
@@ -62,21 +58,24 @@
                 <element signature="method#resetBoard#0;class#MancalaModel#0" expanded="false" />
                 <element signature="docComment;method#getMancalaPits#0;class#MancalaModel#0" expanded="false" />
                 <element signature="docComment;method#attach#0;class#MancalaModel#0" expanded="false" />
-                <element signature="e#13770#13771#0" expanded="true" />
-                <element signature="e#13807#13808#0" expanded="true" />
+                <element signature="docComment;method#notifyPits#0;class#MancalaModel#0" expanded="false" />
                 <element signature="method#notifyPits#0;class#MancalaModel#0" expanded="false" />
+                <element signature="docComment;method#setEndOfTurn#0;class#MancalaModel#0" expanded="false" />
+                <element signature="docComment;method#getEndOfTurn#0;class#MancalaModel#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MancalaTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MancalaTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MancalaTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="63" column="24" lean-forward="false" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="24" />
+            <state relative-caret-position="204">
+              <caret line="59" column="4" lean-forward="false" selection-start-line="59" selection-start-column="4" selection-end-line="59" selection-end-column="4" />
               <folding>
+                <element signature="method#main#0;class#MancalaTest#0" expanded="false" />
                 <element signature="method#CreateAndAttachPits#0;class#MancalaTest#0" expanded="false" />
+                <element signature="method#printStatus#0;class#MancalaTest#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -92,92 +91,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Player.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-              <folding>
-                <marker date="1493845904906" expanded="false" signature="324:362" ph="/**...*/" />
-                <marker date="1493845904906" expanded="false" signature="395:448" ph="{...}" />
-                <marker date="1493845904906" expanded="false" signature="454:625" ph="/**...*/" />
-                <marker date="1493845904906" expanded="false" signature="664:920" ph="{...}" />
-                <marker date="1493845904906" expanded="false" signature="926:1091" ph="/**...*/" />
-                <marker date="1493845904906" expanded="false" signature="1201:1247" ph="/**...*/" />
-                <marker date="1493845904906" expanded="false" signature="1329:1437" ph="/**...*/" />
-                <marker date="1493845904906" expanded="false" signature="1474:1489" ph=" { " />
-                <marker date="1493845904906" expanded="false" signature="1525:1531" ph=" }" />
-                <marker date="1493845904906" expanded="false" signature="1722:1737" ph=" { " />
-                <marker date="1493845904906" expanded="false" signature="1754:1760" ph=" }" />
-                <marker date="1493845904906" expanded="false" signature="1766:1875" ph="/**...*/" />
-                <marker date="1493845904906" expanded="false" signature="1919:2046" ph="{...}" />
-                <marker date="1493845904906" expanded="false" signature="2052:2100" ph="/**...*/" />
-                <marker date="1493845904906" expanded="false" signature="2142:2157" ph=" { " />
-                <marker date="1493845904906" expanded="false" signature="2173:2179" ph=" }" />
-                <marker date="1493845904906" expanded="false" signature="2185:2309" ph="/**...*/" />
-                <marker date="1493845904906" expanded="false" signature="2350:2365" ph=" { " />
-                <marker date="1493845904906" expanded="false" signature="2384:2390" ph=" }" />
-                <marker date="1493845904906" expanded="false" signature="2416:2431" ph=" { " />
-                <marker date="1493845904906" expanded="false" signature="2443:2449" ph=" }" />
-                <marker date="1493845904906" expanded="false" signature="2455:2560" ph="/**...*/" />
-                <marker date="1493845904906" expanded="false" signature="2593:2608" ph=" { " />
-                <marker date="1493845904906" expanded="false" signature="2628:2634" ph=" }" />
-                <marker date="1493845904906" expanded="false" signature="2640:2785" ph="/**...*/" />
-                <marker date="1493845904906" expanded="false" signature="2820:2835" ph=" { " />
-                <marker date="1493845904906" expanded="false" signature="2857:2863" ph=" }" />
-                <marker date="1493845904906" expanded="false" signature="2869:3013" ph="/**...*/" />
-                <marker date="1493845904906" expanded="false" signature="3042:3057" ph=" { " />
-                <marker date="1493845904906" expanded="false" signature="3070:3076" ph=" }" />
-                <marker date="1493845904906" expanded="false" signature="3082:3185" ph="/**...*/" />
-                <marker date="1493845904906" expanded="false" signature="3221:3236" ph=" { " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameState.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GameState.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GUITest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUITest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="MancalaPit.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MancalaPit.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="104" column="49" lean-forward="false" selection-start-line="104" selection-start-column="49" selection-end-line="104" selection-end-column="49" />
+            <state relative-caret-position="119">
+              <caret line="24" column="62" lean-forward="false" selection-start-line="24" selection-start-column="62" selection-end-line="24" selection-end-column="62" />
               <folding>
-                <element signature="e#2865#2866#0" expanded="true" />
-                <element signature="e#2898#2899#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SimpleBoardStyle.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SimpleBoardStyle.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding>
-                <element signature="method#setBGColor#0;class#SimpleBoardStyle#0" expanded="false" />
-                <element signature="method#setPitBorderColor#0;class#SimpleBoardStyle#0" expanded="false" />
-                <element signature="method#setPitBorderStrokeWidth#0;class#SimpleBoardStyle#0" expanded="false" />
-                <element signature="method#setStoneColor#0;class#SimpleBoardStyle#0" expanded="false" />
+                <element signature="e#1208#1377#0" expanded="true" />
+                <element signature="e#1376#1377#0" expanded="true" />
+                <element signature="docComment;method#setNumStones#0;class#MancalaPit#0" expanded="false" />
+                <element signature="docComment;method#getNumStones#0;class#MancalaPit#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -186,8 +109,8 @@
       <file leaf-file-name="MancalaBoard.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MancalaBoard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1139">
-              <caret line="96" column="37" lean-forward="false" selection-start-line="96" selection-start-column="37" selection-end-line="96" selection-end-column="37" />
+            <state relative-caret-position="1224">
+              <caret line="111" column="11" lean-forward="true" selection-start-line="111" selection-start-column="11" selection-end-line="111" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -232,10 +155,10 @@
         <option value="$PROJECT_DIR$/src/PlayerB.java" />
         <option value="$PROJECT_DIR$/src/PlayerA.java" />
         <option value="$PROJECT_DIR$/src/Player.java" />
+        <option value="$PROJECT_DIR$/src/MancalaTest.java" />
+        <option value="$PROJECT_DIR$/src/MancalaModel.java" />
         <option value="$PROJECT_DIR$/src/MancalaBoard.java" />
         <option value="$PROJECT_DIR$/src/MancalaPit.java" />
-        <option value="$PROJECT_DIR$/src/MancalaModel.java" />
-        <option value="$PROJECT_DIR$/src/MancalaTest.java" />
       </list>
     </option>
   </component>
@@ -576,13 +499,12 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41775456" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2689295" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -599,6 +521,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -638,7 +561,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="8" />
+      <option name="time" value="9" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -651,854 +574,16 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/MancalaModel.java">
+    <entry file="file://$PROJECT_DIR$/src/MancalaPit.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#MancalaModel#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#takeTurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#playerATurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#playerATurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getStonesAtPit#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getMancalaBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getPreviousBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#setCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#printBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#printBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getGameState#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#resetBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#resetBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getMancalaPits#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#attach#0;class#MancalaModel#0" expanded="false" />
-            <element signature="e#13770#13771#0" expanded="true" />
-            <element signature="e#13807#13808#0" expanded="true" />
-            <element signature="method#notifyPits#0;class#MancalaModel#0" expanded="false" />
+            <element signature="e#1208#1377#0" expanded="true" />
+            <element signature="e#1376#1377#0" expanded="true" />
+            <element signature="docComment;method#setNumStones#0;class#MancalaPit#0" expanded="false" />
+            <element signature="docComment;method#getNumStones#0;class#MancalaPit#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-          <folding>
-            <marker date="1493845904906" expanded="false" signature="324:362" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="395:448" ph="{...}" />
-            <marker date="1493845904906" expanded="false" signature="454:625" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="664:920" ph="{...}" />
-            <marker date="1493845904906" expanded="false" signature="926:1091" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="1201:1247" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="1329:1437" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="1474:1489" ph=" { " />
-            <marker date="1493845904906" expanded="false" signature="1525:1531" ph=" }" />
-            <marker date="1493845904906" expanded="false" signature="1722:1737" ph=" { " />
-            <marker date="1493845904906" expanded="false" signature="1754:1760" ph=" }" />
-            <marker date="1493845904906" expanded="false" signature="1766:1875" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="1919:2046" ph="{...}" />
-            <marker date="1493845904906" expanded="false" signature="2052:2100" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="2142:2157" ph=" { " />
-            <marker date="1493845904906" expanded="false" signature="2173:2179" ph=" }" />
-            <marker date="1493845904906" expanded="false" signature="2185:2309" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="2350:2365" ph=" { " />
-            <marker date="1493845904906" expanded="false" signature="2384:2390" ph=" }" />
-            <marker date="1493845904906" expanded="false" signature="2416:2431" ph=" { " />
-            <marker date="1493845904906" expanded="false" signature="2443:2449" ph=" }" />
-            <marker date="1493845904906" expanded="false" signature="2455:2560" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="2593:2608" ph=" { " />
-            <marker date="1493845904906" expanded="false" signature="2628:2634" ph=" }" />
-            <marker date="1493845904906" expanded="false" signature="2640:2785" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="2820:2835" ph=" { " />
-            <marker date="1493845904906" expanded="false" signature="2857:2863" ph=" }" />
-            <marker date="1493845904906" expanded="false" signature="2869:3013" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="3042:3057" ph=" { " />
-            <marker date="1493845904906" expanded="false" signature="3070:3076" ph=" }" />
-            <marker date="1493845904906" expanded="false" signature="3082:3185" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="3221:3236" ph=" { " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MancalaModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#MancalaModel#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#takeTurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#playerATurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#playerATurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getStonesAtPit#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getMancalaBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getPreviousBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#setCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#printBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#printBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getGameState#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#resetBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#resetBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getMancalaPits#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#attach#0;class#MancalaModel#0" expanded="false" />
-            <element signature="e#13770#13771#0" expanded="true" />
-            <element signature="e#13807#13808#0" expanded="true" />
-            <element signature="method#notifyPits#0;class#MancalaModel#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1207">
-          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-          <folding>
-            <marker date="1493845904906" expanded="false" signature="324:362" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="395:448" ph="{...}" />
-            <marker date="1493845904906" expanded="false" signature="454:625" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="664:920" ph="{...}" />
-            <marker date="1493845904906" expanded="false" signature="926:1091" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="1201:1247" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="1329:1437" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="1474:1489" ph=" { " />
-            <marker date="1493845904906" expanded="false" signature="1525:1531" ph=" }" />
-            <marker date="1493845904906" expanded="false" signature="1722:1737" ph=" { " />
-            <marker date="1493845904906" expanded="false" signature="1754:1760" ph=" }" />
-            <marker date="1493845904906" expanded="false" signature="1766:1875" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="1919:2046" ph="{...}" />
-            <marker date="1493845904906" expanded="false" signature="2052:2100" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="2142:2157" ph=" { " />
-            <marker date="1493845904906" expanded="false" signature="2173:2179" ph=" }" />
-            <marker date="1493845904906" expanded="false" signature="2185:2309" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="2350:2365" ph=" { " />
-            <marker date="1493845904906" expanded="false" signature="2384:2390" ph=" }" />
-            <marker date="1493845904906" expanded="false" signature="2416:2431" ph=" { " />
-            <marker date="1493845904906" expanded="false" signature="2443:2449" ph=" }" />
-            <marker date="1493845904906" expanded="false" signature="2455:2560" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="2593:2608" ph=" { " />
-            <marker date="1493845904906" expanded="false" signature="2628:2634" ph=" }" />
-            <marker date="1493845904906" expanded="false" signature="2640:2785" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="2820:2835" ph=" { " />
-            <marker date="1493845904906" expanded="false" signature="2857:2863" ph=" }" />
-            <marker date="1493845904906" expanded="false" signature="2869:3013" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="3042:3057" ph=" { " />
-            <marker date="1493845904906" expanded="false" signature="3070:3076" ph=" }" />
-            <marker date="1493845904906" expanded="false" signature="3082:3185" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="3221:3236" ph=" { " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MancalaModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#MancalaModel#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#takeTurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#playerATurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#playerATurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getStonesAtPit#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getMancalaBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getPreviousBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#setCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#printBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#printBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getGameState#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#resetBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#resetBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getMancalaPits#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#attach#0;class#MancalaModel#0" expanded="false" />
-            <element signature="e#13770#13771#0" expanded="true" />
-            <element signature="e#13807#13808#0" expanded="true" />
-            <element signature="method#notifyPits#0;class#MancalaModel#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-          <folding>
-            <marker date="1493845904906" expanded="false" signature="324:362" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="395:448" ph="{...}" />
-            <marker date="1493845904906" expanded="false" signature="454:625" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="664:920" ph="{...}" />
-            <marker date="1493845904906" expanded="false" signature="926:1091" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="1201:1247" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="1329:1437" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="1474:1489" ph=" { " />
-            <marker date="1493845904906" expanded="false" signature="1525:1531" ph=" }" />
-            <marker date="1493845904906" expanded="false" signature="1722:1737" ph=" { " />
-            <marker date="1493845904906" expanded="false" signature="1754:1760" ph=" }" />
-            <marker date="1493845904906" expanded="false" signature="1766:1875" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="1919:2046" ph="{...}" />
-            <marker date="1493845904906" expanded="false" signature="2052:2100" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="2142:2157" ph=" { " />
-            <marker date="1493845904906" expanded="false" signature="2173:2179" ph=" }" />
-            <marker date="1493845904906" expanded="false" signature="2185:2309" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="2350:2365" ph=" { " />
-            <marker date="1493845904906" expanded="false" signature="2384:2390" ph=" }" />
-            <marker date="1493845904906" expanded="false" signature="2416:2431" ph=" { " />
-            <marker date="1493845904906" expanded="false" signature="2443:2449" ph=" }" />
-            <marker date="1493845904906" expanded="false" signature="2455:2560" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="2593:2608" ph=" { " />
-            <marker date="1493845904906" expanded="false" signature="2628:2634" ph=" }" />
-            <marker date="1493845904906" expanded="false" signature="2640:2785" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="2820:2835" ph=" { " />
-            <marker date="1493845904906" expanded="false" signature="2857:2863" ph=" }" />
-            <marker date="1493845904906" expanded="false" signature="2869:3013" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="3042:3057" ph=" { " />
-            <marker date="1493845904906" expanded="false" signature="3070:3076" ph=" }" />
-            <marker date="1493845904906" expanded="false" signature="3082:3185" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="3221:3236" ph=" { " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MancalaModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#MancalaModel#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#takeTurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#playerATurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#playerATurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getStonesAtPit#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getMancalaBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getPreviousBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#setCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#printBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#printBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getGameState#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#resetBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#resetBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getMancalaPits#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#attach#0;class#MancalaModel#0" expanded="false" />
-            <element signature="e#13770#13771#0" expanded="true" />
-            <element signature="e#13807#13808#0" expanded="true" />
-            <element signature="method#notifyPits#0;class#MancalaModel#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-          <folding>
-            <marker date="1493845904906" expanded="false" signature="324:362" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="395:448" ph="{...}" />
-            <marker date="1493845904906" expanded="false" signature="454:625" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="664:920" ph="{...}" />
-            <marker date="1493845904906" expanded="false" signature="926:1091" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="1201:1247" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="1329:1437" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="1474:1489" ph=" { " />
-            <marker date="1493845904906" expanded="false" signature="1525:1531" ph=" }" />
-            <marker date="1493845904906" expanded="false" signature="1722:1737" ph=" { " />
-            <marker date="1493845904906" expanded="false" signature="1754:1760" ph=" }" />
-            <marker date="1493845904906" expanded="false" signature="1766:1875" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="1919:2046" ph="{...}" />
-            <marker date="1493845904906" expanded="false" signature="2052:2100" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="2142:2157" ph=" { " />
-            <marker date="1493845904906" expanded="false" signature="2173:2179" ph=" }" />
-            <marker date="1493845904906" expanded="false" signature="2185:2309" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="2350:2365" ph=" { " />
-            <marker date="1493845904906" expanded="false" signature="2384:2390" ph=" }" />
-            <marker date="1493845904906" expanded="false" signature="2416:2431" ph=" { " />
-            <marker date="1493845904906" expanded="false" signature="2443:2449" ph=" }" />
-            <marker date="1493845904906" expanded="false" signature="2455:2560" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="2593:2608" ph=" { " />
-            <marker date="1493845904906" expanded="false" signature="2628:2634" ph=" }" />
-            <marker date="1493845904906" expanded="false" signature="2640:2785" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="2820:2835" ph=" { " />
-            <marker date="1493845904906" expanded="false" signature="2857:2863" ph=" }" />
-            <marker date="1493845904906" expanded="false" signature="2869:3013" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="3042:3057" ph=" { " />
-            <marker date="1493845904906" expanded="false" signature="3070:3076" ph=" }" />
-            <marker date="1493845904906" expanded="false" signature="3082:3185" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="3221:3236" ph=" { " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/MancalaModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#MancalaModel#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#takeTurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#playerATurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#playerATurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getStonesAtPit#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getMancalaBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getPreviousBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#setCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#printBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#printBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getGameState#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#resetBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#resetBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getMancalaPits#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#attach#0;class#MancalaModel#0" expanded="false" />
-            <element signature="e#13770#13771#0" expanded="true" />
-            <element signature="e#13807#13808#0" expanded="true" />
-            <element signature="method#notifyPits#0;class#MancalaModel#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/MancalaModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#MancalaModel#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#takeTurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#playerATurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#playerATurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getStonesAtPit#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getMancalaBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getPreviousBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#setCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#printBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#printBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getGameState#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#resetBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#resetBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getMancalaPits#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#attach#0;class#MancalaModel#0" expanded="false" />
-            <element signature="e#13770#13771#0" expanded="true" />
-            <element signature="e#13807#13808#0" expanded="true" />
-            <element signature="method#notifyPits#0;class#MancalaModel#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/MancalaModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#MancalaModel#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#takeTurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#playerATurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#playerATurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getStonesAtPit#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getMancalaBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getPreviousBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#setCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#printBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#printBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getGameState#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#resetBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#resetBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getMancalaPits#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#attach#0;class#MancalaModel#0" expanded="false" />
-            <element signature="e#13770#13771#0" expanded="true" />
-            <element signature="e#13807#13808#0" expanded="true" />
-            <element signature="method#notifyPits#0;class#MancalaModel#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/MancalaModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#MancalaModel#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#takeTurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#playerATurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#playerATurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getStonesAtPit#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getMancalaBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getPreviousBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#setCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#printBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#printBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getGameState#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#resetBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#resetBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getMancalaPits#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#attach#0;class#MancalaModel#0" expanded="false" />
-            <element signature="e#13770#13771#0" expanded="true" />
-            <element signature="e#13807#13808#0" expanded="true" />
-            <element signature="method#notifyPits#0;class#MancalaModel#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/MancalaModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#MancalaModel#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#takeTurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#playerATurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#playerATurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getStonesAtPit#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getMancalaBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getPreviousBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#setCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#printBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#printBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getGameState#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#resetBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#resetBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getMancalaPits#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#attach#0;class#MancalaModel#0" expanded="false" />
-            <element signature="e#13770#13771#0" expanded="true" />
-            <element signature="e#13807#13808#0" expanded="true" />
-            <element signature="method#notifyPits#0;class#MancalaModel#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/MancalaModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#MancalaModel#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#takeTurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#playerATurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#playerATurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getStonesAtPit#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getMancalaBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getPreviousBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#setCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#printBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#printBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getGameState#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#resetBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#resetBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getMancalaPits#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#attach#0;class#MancalaModel#0" expanded="false" />
-            <element signature="e#13770#13771#0" expanded="true" />
-            <element signature="e#13807#13808#0" expanded="true" />
-            <element signature="method#notifyPits#0;class#MancalaModel#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/MancalaModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#MancalaModel#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#takeTurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#playerATurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#playerATurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getStonesAtPit#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getMancalaBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getPreviousBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#setCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#printBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#printBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getGameState#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#resetBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#resetBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getMancalaPits#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#attach#0;class#MancalaModel#0" expanded="false" />
-            <element signature="e#13770#13771#0" expanded="true" />
-            <element signature="e#13807#13808#0" expanded="true" />
-            <element signature="method#notifyPits#0;class#MancalaModel#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/MancalaModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#MancalaModel#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#takeTurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#playerATurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#playerATurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getStonesAtPit#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getMancalaBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getPreviousBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#setCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#printBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#printBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getGameState#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#resetBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#resetBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getMancalaPits#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#attach#0;class#MancalaModel#0" expanded="false" />
-            <element signature="e#13770#13771#0" expanded="true" />
-            <element signature="e#13807#13808#0" expanded="true" />
-            <element signature="method#notifyPits#0;class#MancalaModel#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/MancalaModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#MancalaModel#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#takeTurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#playerATurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#playerATurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getStonesAtPit#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getMancalaBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getPreviousBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#setCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#printBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#printBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getGameState#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#resetBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#resetBoard#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#getMancalaPits#0;class#MancalaModel#0" expanded="false" />
-            <element signature="docComment;method#attach#0;class#MancalaModel#0" expanded="false" />
-            <element signature="e#13770#13771#0" expanded="true" />
-            <element signature="e#13807#13808#0" expanded="true" />
-            <element signature="method#notifyPits#0;class#MancalaModel#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PitGUI.java" />
-    <entry file="file://$PROJECT_DIR$/src/MancalaGUI.java" />
-    <entry file="file://$PROJECT_DIR$/src/Circle.java" />
-    <entry file="file://$PROJECT_DIR$/src/GameUI.java" />
-    <entry file="file://$PROJECT_DIR$/src/GameView.java" />
-    <entry file="file://$PROJECT_DIR$/src/Pit.java" />
-    <entry file="file://$PROJECT_DIR$/src/PlayerB.java" />
-    <entry file="file://$PROJECT_DIR$/src/PlayerA.java" />
-    <entry file="file://$PROJECT_DIR$/src/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/BoardStyle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-          <folding>
-            <marker date="1493845904906" expanded="false" signature="324:362" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="395:448" ph="{...}" />
-            <marker date="1493845904906" expanded="false" signature="454:625" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="664:920" ph="{...}" />
-            <marker date="1493845904906" expanded="false" signature="926:1091" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="1201:1247" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="1329:1437" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="1474:1489" ph=" { " />
-            <marker date="1493845904906" expanded="false" signature="1525:1531" ph=" }" />
-            <marker date="1493845904906" expanded="false" signature="1722:1737" ph=" { " />
-            <marker date="1493845904906" expanded="false" signature="1754:1760" ph=" }" />
-            <marker date="1493845904906" expanded="false" signature="1766:1875" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="1919:2046" ph="{...}" />
-            <marker date="1493845904906" expanded="false" signature="2052:2100" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="2142:2157" ph=" { " />
-            <marker date="1493845904906" expanded="false" signature="2173:2179" ph=" }" />
-            <marker date="1493845904906" expanded="false" signature="2185:2309" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="2350:2365" ph=" { " />
-            <marker date="1493845904906" expanded="false" signature="2384:2390" ph=" }" />
-            <marker date="1493845904906" expanded="false" signature="2416:2431" ph=" { " />
-            <marker date="1493845904906" expanded="false" signature="2443:2449" ph=" }" />
-            <marker date="1493845904906" expanded="false" signature="2455:2560" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="2593:2608" ph=" { " />
-            <marker date="1493845904906" expanded="false" signature="2628:2634" ph=" }" />
-            <marker date="1493845904906" expanded="false" signature="2640:2785" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="2820:2835" ph=" { " />
-            <marker date="1493845904906" expanded="false" signature="2857:2863" ph=" }" />
-            <marker date="1493845904906" expanded="false" signature="2869:3013" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="3042:3057" ph=" { " />
-            <marker date="1493845904906" expanded="false" signature="3070:3076" ph=" }" />
-            <marker date="1493845904906" expanded="false" signature="3082:3185" ph="/**...*/" />
-            <marker date="1493845904906" expanded="false" signature="3221:3236" ph=" { " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUITest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1517,38 +602,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MancalaBoard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
-          <caret line="96" column="37" lean-forward="false" selection-start-line="96" selection-start-column="37" selection-end-line="96" selection-end-column="37" />
+        <state relative-caret-position="1496">
+          <caret line="109" column="43" lean-forward="false" selection-start-line="109" selection-start-column="43" selection-end-line="109" selection-end-column="43" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MancalaPit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="104" column="49" lean-forward="false" selection-start-line="104" selection-start-column="49" selection-end-line="104" selection-end-column="49" />
-          <folding>
-            <element signature="e#2865#2866#0" expanded="true" />
-            <element signature="e#2898#2899#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MancalaModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-426">
-          <caret line="26" column="51" lean-forward="false" selection-start-line="26" selection-start-column="51" selection-end-line="26" selection-end-column="51" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#MancalaModel#0" expanded="false" />
             <element signature="docComment;method#MancalaModel#0;class#MancalaModel#0" expanded="false" />
             <element signature="docComment;method#takeTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#takeTurn#0;class#MancalaModel#0" expanded="false" />
             <element signature="docComment;method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
             <element signature="method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
             <element signature="docComment;method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
             <element signature="docComment;method#playerATurn#0;class#MancalaModel#0" expanded="false" />
-            <element signature="method#playerATurn#0;class#MancalaModel#0" expanded="false" />
             <element signature="docComment;method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
             <element signature="method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
             <element signature="docComment;method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
@@ -1571,19 +644,827 @@
             <element signature="method#resetBoard#0;class#MancalaModel#0" expanded="false" />
             <element signature="docComment;method#getMancalaPits#0;class#MancalaModel#0" expanded="false" />
             <element signature="docComment;method#attach#0;class#MancalaModel#0" expanded="false" />
-            <element signature="e#13770#13771#0" expanded="true" />
-            <element signature="e#13807#13808#0" expanded="true" />
+            <element signature="docComment;method#notifyPits#0;class#MancalaModel#0" expanded="false" />
             <element signature="method#notifyPits#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#setEndOfTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getEndOfTurn#0;class#MancalaModel#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;method#Player#0;class#Player#0" expanded="false" />
+            <element signature="method#Player#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#sideIsEmpty#0;class#Player#0" expanded="false" />
+            <element signature="method#sideIsEmpty#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#setSide#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#incrementUndoCounter#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#addToMancala#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#setUndoCounter#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#setPits#0;class#Player#0" expanded="false" />
+            <element signature="method#setPits#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#setCanUndo#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#setMancalaStones#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#getUndoCounter#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#getMancalaStones#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#getSide#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#canPlayerUndo#0;class#Player#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MancalaModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#MancalaModel#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#takeTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#takeTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#playerATurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getStonesAtPit#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getMancalaBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getPreviousBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#setCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#printBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#printBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getGameState#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#resetBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#resetBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getMancalaPits#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#attach#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#notifyPits#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#notifyPits#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#setEndOfTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getEndOfTurn#0;class#MancalaModel#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1207">
+          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;method#Player#0;class#Player#0" expanded="false" />
+            <element signature="method#Player#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#sideIsEmpty#0;class#Player#0" expanded="false" />
+            <element signature="method#sideIsEmpty#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#setSide#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#incrementUndoCounter#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#addToMancala#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#setUndoCounter#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#setPits#0;class#Player#0" expanded="false" />
+            <element signature="method#setPits#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#setCanUndo#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#setMancalaStones#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#getUndoCounter#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#getMancalaStones#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#getSide#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#canPlayerUndo#0;class#Player#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MancalaModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#MancalaModel#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#takeTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#takeTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#playerATurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getStonesAtPit#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getMancalaBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getPreviousBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#setCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#printBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#printBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getGameState#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#resetBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#resetBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getMancalaPits#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#attach#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#notifyPits#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#notifyPits#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#setEndOfTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getEndOfTurn#0;class#MancalaModel#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;method#Player#0;class#Player#0" expanded="false" />
+            <element signature="method#Player#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#sideIsEmpty#0;class#Player#0" expanded="false" />
+            <element signature="method#sideIsEmpty#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#setSide#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#incrementUndoCounter#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#addToMancala#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#setUndoCounter#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#setPits#0;class#Player#0" expanded="false" />
+            <element signature="method#setPits#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#setCanUndo#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#setMancalaStones#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#getUndoCounter#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#getMancalaStones#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#getSide#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#canPlayerUndo#0;class#Player#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MancalaModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#MancalaModel#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#takeTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#takeTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#playerATurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getStonesAtPit#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getMancalaBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getPreviousBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#setCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#printBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#printBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getGameState#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#resetBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#resetBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getMancalaPits#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#attach#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#notifyPits#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#notifyPits#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#setEndOfTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getEndOfTurn#0;class#MancalaModel#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;method#Player#0;class#Player#0" expanded="false" />
+            <element signature="method#Player#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#sideIsEmpty#0;class#Player#0" expanded="false" />
+            <element signature="method#sideIsEmpty#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#setSide#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#incrementUndoCounter#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#addToMancala#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#setUndoCounter#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#setPits#0;class#Player#0" expanded="false" />
+            <element signature="method#setPits#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#setCanUndo#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#setMancalaStones#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#getUndoCounter#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#getMancalaStones#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#getSide#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#canPlayerUndo#0;class#Player#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java" />
+    <entry file="file://$PROJECT_DIR$/src/MancalaModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#MancalaModel#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#takeTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#takeTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#playerATurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getStonesAtPit#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getMancalaBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getPreviousBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#setCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#printBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#printBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getGameState#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#resetBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#resetBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getMancalaPits#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#attach#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#notifyPits#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#notifyPits#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#setEndOfTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getEndOfTurn#0;class#MancalaModel#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java" />
+    <entry file="file://$PROJECT_DIR$/src/MancalaModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#MancalaModel#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#takeTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#takeTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#playerATurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getStonesAtPit#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getMancalaBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getPreviousBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#setCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#printBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#printBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getGameState#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#resetBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#resetBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getMancalaPits#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#attach#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#notifyPits#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#notifyPits#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#setEndOfTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getEndOfTurn#0;class#MancalaModel#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java" />
+    <entry file="file://$PROJECT_DIR$/src/MancalaModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#MancalaModel#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#takeTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#takeTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#playerATurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getStonesAtPit#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getMancalaBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getPreviousBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#setCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#printBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#printBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getGameState#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#resetBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#resetBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getMancalaPits#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#attach#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#notifyPits#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#notifyPits#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#setEndOfTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getEndOfTurn#0;class#MancalaModel#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java" />
+    <entry file="file://$PROJECT_DIR$/src/MancalaModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#MancalaModel#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#takeTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#takeTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#playerATurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getStonesAtPit#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getMancalaBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getPreviousBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#setCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#printBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#printBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getGameState#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#resetBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#resetBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getMancalaPits#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#attach#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#notifyPits#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#notifyPits#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#setEndOfTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getEndOfTurn#0;class#MancalaModel#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java" />
+    <entry file="file://$PROJECT_DIR$/src/MancalaModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#MancalaModel#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#takeTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#takeTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#playerATurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getStonesAtPit#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getMancalaBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getPreviousBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#setCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#printBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#printBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getGameState#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#resetBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#resetBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getMancalaPits#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#attach#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#notifyPits#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#notifyPits#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#setEndOfTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getEndOfTurn#0;class#MancalaModel#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java" />
+    <entry file="file://$PROJECT_DIR$/src/MancalaModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#MancalaModel#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#takeTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#takeTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#playerATurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getStonesAtPit#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getMancalaBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getPreviousBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#setCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#printBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#printBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getGameState#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#resetBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#resetBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getMancalaPits#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#attach#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#notifyPits#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#notifyPits#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#setEndOfTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getEndOfTurn#0;class#MancalaModel#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java" />
+    <entry file="file://$PROJECT_DIR$/src/MancalaModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#MancalaModel#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#takeTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#takeTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#playerATurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getStonesAtPit#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getMancalaBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getPreviousBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#setCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#printBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#printBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getGameState#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#resetBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#resetBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getMancalaPits#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#attach#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#notifyPits#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#notifyPits#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#setEndOfTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getEndOfTurn#0;class#MancalaModel#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java" />
+    <entry file="file://$PROJECT_DIR$/src/MancalaModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#MancalaModel#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#takeTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#takeTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#playerATurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getStonesAtPit#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getMancalaBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getPreviousBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#setCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#printBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#printBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getGameState#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#resetBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#resetBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getMancalaPits#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#attach#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#notifyPits#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#notifyPits#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#setEndOfTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getEndOfTurn#0;class#MancalaModel#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java" />
+    <entry file="file://$PROJECT_DIR$/src/MancalaModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#MancalaModel#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#takeTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#takeTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#playerATurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getStonesAtPit#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getMancalaBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getPreviousBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#setCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#printBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#printBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getGameState#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#resetBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#resetBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getMancalaPits#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#attach#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#notifyPits#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#notifyPits#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#setEndOfTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getEndOfTurn#0;class#MancalaModel#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PitGUI.java" />
+    <entry file="file://$PROJECT_DIR$/src/MancalaGUI.java" />
+    <entry file="file://$PROJECT_DIR$/src/Circle.java" />
+    <entry file="file://$PROJECT_DIR$/src/GameUI.java" />
+    <entry file="file://$PROJECT_DIR$/src/GameView.java" />
+    <entry file="file://$PROJECT_DIR$/src/Pit.java" />
+    <entry file="file://$PROJECT_DIR$/src/PlayerB.java" />
+    <entry file="file://$PROJECT_DIR$/src/PlayerA.java" />
+    <entry file="file://$PROJECT_DIR$/src/Main.java" />
     <entry file="file://$PROJECT_DIR$/src/MancalaTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="63" column="24" lean-forward="false" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="24" />
+        <state relative-caret-position="204">
+          <caret line="59" column="4" lean-forward="false" selection-start-line="59" selection-start-column="4" selection-end-line="59" selection-end-column="4" />
           <folding>
+            <element signature="method#main#0;class#MancalaTest#0" expanded="false" />
             <element signature="method#CreateAndAttachPits#0;class#MancalaTest#0" expanded="false" />
+            <element signature="method#printStatus#0;class#MancalaTest#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BoardStyle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="106" column="16" lean-forward="true" selection-start-line="106" selection-start-column="16" selection-end-line="106" selection-end-column="32" />
+          <folding>
+            <element signature="docComment;method#Player#0;class#Player#0" expanded="false" />
+            <element signature="method#Player#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#sideIsEmpty#0;class#Player#0" expanded="false" />
+            <element signature="method#sideIsEmpty#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#setSide#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#incrementUndoCounter#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#addToMancala#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#setUndoCounter#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#setPits#0;class#Player#0" expanded="false" />
+            <element signature="method#setPits#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#setCanUndo#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#setMancalaStones#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#getUndoCounter#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#getMancalaStones#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#getSide#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#canPlayerUndo#0;class#Player#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUITest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="30" column="81" lean-forward="false" selection-start-line="30" selection-start-column="81" selection-end-line="30" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MancalaBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="111" column="11" lean-forward="true" selection-start-line="111" selection-start-column="11" selection-end-line="111" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SimpleBoardStyle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-221">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="method#setBGColor#0;class#SimpleBoardStyle#0" expanded="false" />
+            <element signature="method#setPitBorderColor#0;class#SimpleBoardStyle#0" expanded="false" />
+            <element signature="method#setPitBorderStrokeWidth#0;class#SimpleBoardStyle#0" expanded="false" />
+            <element signature="method#setStoneColor#0;class#SimpleBoardStyle#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MancalaPit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="24" column="62" lean-forward="false" selection-start-line="24" selection-start-column="62" selection-end-line="24" selection-end-column="62" />
+          <folding>
+            <element signature="e#1208#1377#0" expanded="true" />
+            <element signature="e#1376#1377#0" expanded="true" />
+            <element signature="docComment;method#setNumStones#0;class#MancalaPit#0" expanded="false" />
+            <element signature="docComment;method#getNumStones#0;class#MancalaPit#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MancalaModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1698">
+          <caret line="471" column="29" lean-forward="true" selection-start-line="471" selection-start-column="29" selection-end-line="471" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#MancalaModel#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#takeTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#takeTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#traverseBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#playerBTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#playerATurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#firstMoveIsValid#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#undoLastMove#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#copyBoardFromTo#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getStonesAtPit#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getMancalaBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getPreviousBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#setCurrentPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#hasGameFinished#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#printBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#printBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getGameState#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#switchPlayer#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#resetBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#resetBoard#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getMancalaPits#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#attach#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#notifyPits#0;class#MancalaModel#0" expanded="false" />
+            <element signature="method#notifyPits#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#setEndOfTurn#0;class#MancalaModel#0" expanded="false" />
+            <element signature="docComment;method#getEndOfTurn#0;class#MancalaModel#0" expanded="false" />
           </folding>
         </state>
       </provider>

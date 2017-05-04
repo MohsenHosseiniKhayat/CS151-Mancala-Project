@@ -74,8 +74,8 @@ public class MancalaBoard extends JFrame implements ChangeListener{
 		JPanel buttonPanel = new JPanel();
 		buttonPanel.setLayout(new FlowLayout());
 		
-		JButton undoButton = new JButton("Undo Move");
-		JButton endTurnButton = new JButton("End Turn");
+		final JButton undoButton = new JButton("Undo Move");
+		final JButton endTurnButton = new JButton("End Turn");
 
 		undoButton.addActionListener(new ActionListener()
         {
@@ -85,12 +85,29 @@ public class MancalaBoard extends JFrame implements ChangeListener{
                 model.undoLastMove();
             }
         });
+		undoButton.addChangeListener(new ChangeListener()
+        {
+            @Override
+            public void stateChanged(ChangeEvent e)
+            {
+                    undoButton.setEnabled(model.getCurrentPlayer().canPlayerUndo());
+            }
+        });
+
 		endTurnButton.addActionListener(new ActionListener()
         {
             @Override
             public void actionPerformed(ActionEvent e)
             {
                 model.switchPlayer();
+            }
+        });
+		endTurnButton.addChangeListener(new ChangeListener()
+        {
+            @Override
+            public void stateChanged(ChangeEvent e)
+            {
+                endTurnButton.setEnabled(!model.getEndOfTurn());
             }
         });
 

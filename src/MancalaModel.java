@@ -1,8 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import javax.swing.plaf.BorderUIResource;
-
 /**
  * Created by Mohsen Hosseini Khayat on 4/7/2017.
  */
@@ -11,6 +9,7 @@ public class MancalaModel
     private int[][] _mancalaBoard;
     private Player  _currentPlayer;
     private int[][] _previousBoard;
+    private boolean _endOfTurn = false;
     private Player  _playerA = new Player(1);
     private Player  _playerB = new Player(0);
     private GameState _gameState = GameState.gameInProgress;
@@ -61,6 +60,8 @@ public class MancalaModel
         notifyPits();
         //Let the current player undo
         player.setCanUndo(true);
+        // Flip flag to signal end of turn;
+        _endOfTurn = !_endOfTurn;
 
         //TODO CHANGE PLAYERS
         // I think we need to call switchPlayers() after the player clicks the End turn button
@@ -144,6 +145,7 @@ public class MancalaModel
         if (column == 6)
         {
             //get another turn
+            _endOfTurn = true;
             return;
         }
 
@@ -213,6 +215,7 @@ public class MancalaModel
         if (column == 6)
         {
             //Player gets to have another turn
+            _endOfTurn = true;
             return;
         }
 
@@ -463,6 +466,9 @@ public class MancalaModel
         _mancalaPits.add(pit);
     }
 
+    /**
+     * Updates observers
+     */
     public void notifyPits ()
     {
         int num = 0;
@@ -474,6 +480,21 @@ public class MancalaModel
             }
         }
     }
+
+    /**
+     * Sets the end of turn status
+     * @param ended The new status
+     */
+    public void setEndOfTurn (boolean ended)
+    {
+        _endOfTurn = ended;
+    }
+
+    /**
+     * Returns the end of turn status
+     * @return True if turn ended, false otherwise
+     */
+    public boolean getEndOfTurn () {return _endOfTurn;}
 }
 
 

@@ -1,6 +1,7 @@
-import sun.java2d.pipe.SpanShapeRenderer;
+//import sun.java2d.pipe.SpanShapeRenderer;
 
 public class MancalaTest {
+	/*
     public static void main (String [] args)
     {
         MancalaModel model = new MancalaModel(4);
@@ -89,4 +90,5 @@ public class MancalaTest {
         System.out.println("---------------------" + testNum + "-------------------------------");
         return result;
     }
+    */
 }

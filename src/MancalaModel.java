@@ -13,7 +13,8 @@ public class MancalaModel
     private Player  _playerA = new Player(1);
     private Player  _playerB = new Player(0);
     private GameState _gameState = GameState.gameInProgress;
-    private ArrayList<MancalaPit> _mancalaPits;
+    private MancalaPit [][] _mancalaPits;
+    private int _numOfStones;
 
     /**
      * Sets up a Mancala model
@@ -23,7 +24,11 @@ public class MancalaModel
      */
     public MancalaModel(int numberOfStones)
     {
-        _mancalaPits = new ArrayList<MancalaPit>();
+        _numOfStones = numberOfStones;  //To track the number of stones we set the game with. For reset purposes
+        _mancalaPits = new MancalaPit[2][7];
+        //An array to match the board arrays indexes, each element in this array will be a
+        // listener for the corresponding element in the board
+
         //Set the current player to player A
         _currentPlayer = _playerA;
 
@@ -36,7 +41,7 @@ public class MancalaModel
             for (int j = 0; j < 7; j++)
             {
                 //Fill each pit with the numberOfStones
-                _mancalaBoard[i][j] = numberOfStones;
+                _mancalaBoard[i][j] = _numOfStones;
             }
         }
 
@@ -141,8 +146,11 @@ public class MancalaModel
             }
         }
 
+
         //Mancala was last position
-        if (column == 6)
+        //Bad coding most likely, but we do this check instead of checking for column == 6 because we
+        // manipulate the column and row values in that case (check above)
+        if (column == -1)
         {
             //get another turn
             _endOfTurn = true;
@@ -211,8 +219,10 @@ public class MancalaModel
             }
         }
 
-        //Last stone placed is in player's own Mancalaa
-        if (column == 6)
+        //Mancala was last position
+        //Bad coding most likely, but we do this check instead of checking for column == 6 because we
+        // manipulate the column and row values in that case (check above)
+        if (column == -1)
         {
             //Player gets to have another turn
             _endOfTurn = true;
@@ -224,7 +234,7 @@ public class MancalaModel
         else if (_mancalaBoard[row][column] == 1)
         {
             //Pick the last stone and all the stones
-            // on the oppoiste side of that pit and place them into
+            // on the opposite side of that pit and place them into
             // players Mancala
             _mancalaBoard[row][column] = 0;
             stonesPickedUp = 1 + _mancalaBoard[row - 1][5-column];
@@ -435,12 +445,13 @@ public class MancalaModel
      */
     public void resetBoard ()
     {
+        int a = _numOfStones;
         //Reset the board arrays
-        int[][] emptyBoard = {{0,0,0,0,0,0,0},{0,0,0,0,0,0,0}} ;
+        int[][] newBoard = {{a,a,a,a,a,a,0},{a,a,a,a,a,a,0}} ;
         _currentPlayer = _playerA;
         _gameState = GameState.gameInProgress;
-        copyBoardFromTo(emptyBoard,_mancalaBoard);
-        copyBoardFromTo(emptyBoard,_previousBoard);
+        copyBoardFromTo(newBoard,_mancalaBoard);
+        copyBoardFromTo(newBoard,_previousBoard);
 
         //Reset the flags and Mancalas
         _playerA.setMancalaStones(0);
@@ -449,21 +460,26 @@ public class MancalaModel
         _playerB.setCanUndo(false);
         _playerA.setUndoCounter(0);
         _playerB.setUndoCounter(0);
+
+        //Must notify observers
+        notifyPits();
     }
 
     /**
      * Returns the mancala pit observers
      * @return _mancalaPits The pit observers
      */
-    public ArrayList<MancalaPit> getMancalaPits() { return _mancalaPits;}
+    public MancalaPit[][] getMancalaPits() { return _mancalaPits;}
 
     /**
-     * Adds an observer to the pit observers
-     * @param pit The observer to add
+     * Adds a pit listener for the corresponding element in the board
+     * @param pit The listener to add
+     * @param row The row index
+     * @param column The column index
      */
-    public void attach(MancalaPit pit)
+    public void attach(MancalaPit pit, int row, int column)
     {
-        _mancalaPits.add(pit);
+        _mancalaPits[row][column] = pit;
     }
 
     /**
@@ -471,12 +487,11 @@ public class MancalaModel
      */
     public void notifyPits ()
     {
-        int num = 0;
         for (int i = 0; i<2; i++)
         {
             for (int j = 0; j<7; j++)
             {
-                _mancalaPits.get(num++).setNumStones(_mancalaBoard[i][j]);
+                _mancalaPits[i][j].setNumStones(_mancalaBoard[i][j]);
             }
         }
     }
@@ -496,5 +511,3 @@ public class MancalaModel
      */
     public boolean getEndOfTurn () {return _endOfTurn;}
 }
-
-

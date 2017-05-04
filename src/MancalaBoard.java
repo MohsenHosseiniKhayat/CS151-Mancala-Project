@@ -43,6 +43,7 @@ public class MancalaBoard extends JFrame implements ChangeListener{
 		c.fill = GridBagConstraints.BOTH;
 		
 		MancalaPit mB = new MancalaPit(0, 7, style);
+		model.attach(mB,0,7);
 		mancalaPanel.add(mB, c);
 		
 		c = new GridBagConstraints();
@@ -53,8 +54,9 @@ public class MancalaBoard extends JFrame implements ChangeListener{
 		c.fill = GridBagConstraints.BOTH;
 		
 		MancalaPit mA = new MancalaPit(1, 7, style);
+		model.attach(mA, 1, 7);
 		mancalaPanel.add(mA, c);
-		
+
 		for(int row = 0; row < 2; row++)
 		{
 			for(int col = 1; col < 7; col++)
@@ -63,8 +65,11 @@ public class MancalaBoard extends JFrame implements ChangeListener{
 				c.gridx = col;
 				c.gridy = row;
 				c.fill = GridBagConstraints.NONE;
-				
+
+
 				MancalaPit pit = new MancalaPit(row, col, style);
+                //Check this out please, I'm not sure if this is right
+				model.attach(pit,row,col-1);
 				mancalaPanel.add(pit, c);
 			}
 		}

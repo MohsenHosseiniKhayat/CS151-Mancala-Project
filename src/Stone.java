@@ -1,13 +1,14 @@
+import java.awt.BasicStroke;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Shape;
 import java.awt.geom.Ellipse2D;
 
 import javax.swing.Icon;
+import javax.swing.JComponent;
 
-public class Stone extends Component{
+public class Stone extends JComponent{
 	private int x;
 	private int y;
 	private int width;
@@ -23,7 +24,7 @@ public class Stone extends Component{
 		this.height = (int) shape.getBounds2D().getHeight();
 		this.width = (int) shape.getBounds2D().getWidth();
 		this.fillColor = Color.BLACK;
-		this.strokeColor = Color.BLACK;
+		this.strokeColor = Color.BLUE;
 	}
 	
 	protected Stone(int x, int y, double diameter)
@@ -70,10 +71,11 @@ public class Stone extends Component{
 	public void paintComponent(Graphics g)
 	{
 		Graphics2D g2 = (Graphics2D) g;
-		
-		g2.setColor(fillColor);
-		g2.fill(shape);
-		g2.setColor(strokeColor);
-		g2.draw(shape);
+		g2.setColor(this.fillColor);
+		g2.fill(new Ellipse2D.Double(x, y, width, width));
+		g2.setStroke(new BasicStroke(5));
+		g2.setColor(this.strokeColor);
+		g2.draw(new Ellipse2D.Double(x, y, width, width));
+
 	}
 }

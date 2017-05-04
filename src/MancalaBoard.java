@@ -102,8 +102,6 @@ public class MancalaBoard extends JFrame implements ChangeListener{
 	
 	@Override
 	public void stateChanged(ChangeEvent e) {
-		model.getCurrentPlayer();
-		
 	}
 
 	MancalaModel model;

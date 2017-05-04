@@ -24,7 +24,7 @@ public class GUITest {
 	{
 		SimpleBoardStyle highContrast = new SimpleBoardStyle();
 		highContrast.setBGColor(Color.WHITE);
-		highContrast.setActivePitBorderColor(Color.BLUE);
+		highContrast.setActivePitBorderColor(Color.BLACK);
 		highContrast.setInactivePitBorderColor(Color.GRAY);
 		highContrast.setStoneColor(Color.BLACK);
 		highContrast.setPitBorderStrokeWidth(15);

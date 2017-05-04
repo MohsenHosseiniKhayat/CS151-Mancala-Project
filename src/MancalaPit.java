@@ -1,27 +1,16 @@
-import java.awt.BasicStroke;
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.ComponentOrientation;
 import java.awt.Dimension;
-import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.GridLayout;
 import java.awt.RenderingHints;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.awt.geom.Arc2D;
-import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
-import java.awt.geom.Rectangle2D;
+import java.util.ArrayList;
 import java.util.Random;
 
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.border.StrokeBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
@@ -46,13 +35,6 @@ class MancalaPit extends JPanel implements ChangeListener{
 			setPreferredSize(new Dimension((int) pitWidth, (int) pitWidth));
 		
 		JPanel stonesPanel = new JPanel();
-		
-		//GridLayout stonesLayout = new GridLayout(8, 6);
-		//stonesLayout.setHgap(8);
-		//stonesLayout.setVgap(3);
-		//stonesPanel.setLayout(stonesLayout);
-		
-		//ImageIcon stoneIcon = new ImageIcon("stoneIconSmall.png");
 		
 		for(int i = 0; i < numStones; i++)
 		{
@@ -127,9 +109,24 @@ class MancalaPit extends JPanel implements ChangeListener{
 	
 	@Override
 	public void stateChanged(ChangeEvent arg0) {
-		// TODO Auto-generated method stub
 		
 	}
+
+	/**
+	 * Returns the number of stones the mancala pit has and will draw
+	 * @param numStones The number of stones in the pit
+	 */
+	public void setNumStones (int numStones)
+	{
+		this.numStones = numStones;
+	}
+
+	/**
+	 * Returns the number of stones in the mancala pit
+	 * @return numstones The number of stones in the mancala pit
+	 */
+	public int getNumStones () {return numStones;}
+//>>>>>>> branch 'master' of https://github.com/MohsenHosseiniKhayat/CS151-Mancala-Project
 
 	private int numStones;
 	private int row;
@@ -137,5 +134,6 @@ class MancalaPit extends JPanel implements ChangeListener{
 	private int id;
 	private MancalaModel model;
 	private BoardStyle style;
+	private ArrayList<Stone> stones;
 
 }

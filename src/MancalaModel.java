@@ -1,6 +1,8 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 
-import javax.swing.plaf.BorderUIResource;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 /**
  * Created by Mohsen Hosseini Khayat on 4/7/2017.
@@ -10,9 +12,13 @@ public class MancalaModel
     private int[][] _mancalaBoard;
     private Player  _currentPlayer;
     private int[][] _previousBoard;
+    private boolean _endOfTurn = false;
     private Player  _playerA = new Player(1);
     private Player  _playerB = new Player(0);
     private GameState _gameState = GameState.gameInProgress;
+    //private MancalaPit [][] _mancalaPits;
+    private int _numOfStones;
+    private ArrayList<ChangeListener> listeners;
 
     /**
      * Sets up a Mancala model
@@ -22,6 +28,9 @@ public class MancalaModel
      */
     public MancalaModel(int numberOfStones)
     {
+        _numOfStones = numberOfStones;  //To track the number of stones we set the game with. For reset purposes
+        listeners = new ArrayList<ChangeListener>();
+        
         //Set the current player to player A
         _currentPlayer = _playerA;
 
@@ -34,7 +43,7 @@ public class MancalaModel
             for (int j = 0; j < 7; j++)
             {
                 //Fill each pit with the numberOfStones
-                _mancalaBoard[i][j] = numberOfStones;
+                _mancalaBoard[i][j] = _numOfStones;
             }
         }
 
@@ -45,8 +54,6 @@ public class MancalaModel
         //Allocate the board sides to the corresponding players
         _playerA.setSide(_playerA.getRow(),_mancalaBoard);
         _playerB.setSide(_playerB.getRow(),_mancalaBoard);
-
-
     }
 
     /**
@@ -57,9 +64,11 @@ public class MancalaModel
     public void takeTurn(Player player,int row, int column)
     {
         traverseBoard(row, column);
-
+        notifyPits();
         //Let the current player undo
         player.setCanUndo(true);
+        // Flip flag to signal end of turn;
+        _endOfTurn = !_endOfTurn;
 
         //TODO CHANGE PLAYERS
         // I think we need to call switchPlayers() after the player clicks the End turn button
@@ -139,10 +148,14 @@ public class MancalaModel
             }
         }
 
+
         //Mancala was last position
-        if (column == 6)
+        //Bad coding most likely, but we do this check instead of checking for column == 6 because we
+        // manipulate the column and row values in that case (check above)
+        if (column == -1)
         {
             //get another turn
+            _endOfTurn = true;
             return;
         }
 
@@ -208,10 +221,13 @@ public class MancalaModel
             }
         }
 
-        //Last stone placed is in player's own Mancalaa
-        if (column == 6)
+        //Mancala was last position
+        //Bad coding most likely, but we do this check instead of checking for column == 6 because we
+        // manipulate the column and row values in that case (check above)
+        if (column == -1)
         {
             //Player gets to have another turn
+            _endOfTurn = true;
             return;
         }
 
@@ -220,7 +236,7 @@ public class MancalaModel
         else if (_mancalaBoard[row][column] == 1)
         {
             //Pick the last stone and all the stones
-            // on the oppoiste side of that pit and place them into
+            // on the opposite side of that pit and place them into
             // players Mancala
             _mancalaBoard[row][column] = 0;
             stonesPickedUp = 1 + _mancalaBoard[row - 1][5-column];
@@ -277,12 +293,14 @@ public class MancalaModel
             copyBoardFromTo(_previousBoard,_mancalaBoard);
             _playerA.incrementUndoCounter();
             _playerA.setCanUndo(false);
+            notifyPits();
         }
         else if (_currentPlayer == _playerB && _currentPlayer.getUndoCounter() < 3)
         {
             copyBoardFromTo(_previousBoard,_mancalaBoard);
             _playerB.incrementUndoCounter();
             _playerB.setCanUndo(false);
+            notifyPits();
         }
     }
 
@@ -351,17 +369,18 @@ public class MancalaModel
     public boolean hasGameFinished (int [][] currentMancalaBoard)
     {
         boolean result = false;
-        if (_playerA.sideIsEmpty())
+        if (_playerA.sideIsEmpty() || _playerB.sideIsEmpty())
         {
-            _gameState = GameState.playerAWon;
-            result = true;
+            if (_playerA.getMancalaStones() > _playerB.getMancalaStones())
+            {
+                result = true;
+                _gameState = GameState.playerAWon;
+            }
+            else
+            {
+                _gameState = GameState.playerBWon;
+            }
         }
-        else if (_playerB.sideIsEmpty())
-        {
-            _gameState = GameState.playerBWon;
-            result = true;
-        }
-
         return result;
     }
 
@@ -422,6 +441,66 @@ public class MancalaModel
             _currentPlayer = _playerA;
         }
     }
+
+    /**
+     * Resets the board state for a new game
+     */
+    public void resetBoard ()
+    {
+        int a = _numOfStones;
+        //Reset the board arrays
+        int[][] newBoard = {{a,a,a,a,a,a,0},{a,a,a,a,a,a,0}} ;
+        _currentPlayer = _playerA;
+        _gameState = GameState.gameInProgress;
+        copyBoardFromTo(newBoard,_mancalaBoard);
+        copyBoardFromTo(newBoard,_previousBoard);
+
+        //Reset the flags and Mancalas
+        _playerA.setMancalaStones(0);
+        _playerB.setMancalaStones(0);
+        _playerA.setCanUndo(false);
+        _playerB.setCanUndo(false);
+        _playerA.setUndoCounter(0);
+        _playerB.setUndoCounter(0);
+
+        //Must notify observers
+        notifyPits();
+    }
+
+    /**
+     * Adds a pit listener for the corresponding element in the board
+     * @param pit The listener to add
+     * @param row The row index
+     * @param column The column index
+     */
+    public void attach(ChangeListener cl)
+    {
+        listeners.add(cl);
+    }
+
+    /**
+     * Updates observers
+     */
+    public void notifyPits ()
+    {
+        for(ChangeListener cl : listeners)
+        {
+        	cl.stateChanged(new ChangeEvent(this));
+        }
+    }
+
+    /**
+     * Sets the end of turn status
+     * @param ended The new status
+     */
+    public void setEndOfTurn (boolean ended)
+    {
+        _endOfTurn = ended;
+    }
+
+    /**
+     * Returns the end of turn status
+     * @return True if turn ended, false otherwise
+     */
+    public boolean getEndOfTurn () {return _endOfTurn;}
 }
-
-

@@ -128,7 +128,7 @@ public class MancalaBoard extends JFrame implements ChangeListener{
             @Override
             public void stateChanged(ChangeEvent e)
             {
-                endTurnButton.setEnabled(!model.getEndOfTurn());
+                endTurnButton.setEnabled(model.getEndOfTurn());
             }
         });
 

@@ -20,7 +20,7 @@ class MancalaPit extends JPanel implements ChangeListener{
 	 * @param row - the row of this pit
 	 * @param col
 	 */
-	public MancalaPit(int row, int col, MancalaModel model, BoardStyle styleIn)
+	public MancalaPit(final int row, final int col, final MancalaModel model, BoardStyle styleIn)
 	{
 		this.row = row;
 		this.col = col;

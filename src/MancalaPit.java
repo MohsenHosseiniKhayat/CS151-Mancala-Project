@@ -1,8 +1,5 @@
 import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.RenderingHints;
+import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.geom.Arc2D;
@@ -109,6 +106,8 @@ class MancalaPit extends JPanel implements ChangeListener{
 	
 	@Override
 	public void stateChanged(ChangeEvent arg0) {
+		ArrayList<Stone> oldStones = stones;
+		stones = new ArrayList<Stone>();
 		this.paintComponent(this.getGraphics());
 		
 	}

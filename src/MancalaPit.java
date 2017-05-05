@@ -1,4 +1,6 @@
+import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
@@ -10,6 +12,7 @@ import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.Random;
 
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -48,6 +51,9 @@ class MancalaPit extends JPanel implements ChangeListener{
 			stones.add(stone);
 		}
 		
+		this.add(pitLabel);
+
+		
 		this.addMouseListener(new MouseAdapter()
 				{
 					public void mouseClicked(MouseEvent e)
@@ -55,7 +61,7 @@ class MancalaPit extends JPanel implements ChangeListener{
 						if(active)
 						{
 							System.out.print(model.toString());
-							System.out.printf("Clicked:\nRow: %d, Column: %d\n", row, col);
+							//System.out.printf("Clicked:\nRow: %d, Column: %d\n", row, col);
 							model.takeTurn(model.getCurrentPlayer(), row, col);
 							System.out.print(model.toString());
 							if (model.getTotalStonesCount() != 36)
@@ -83,6 +89,7 @@ class MancalaPit extends JPanel implements ChangeListener{
 		g2.clearRect(0, 0, this.getWidth(), this.getHeight());
 
 		g2.setStroke(style.getPitBorderStroke());
+		g2.setColor(active ? style.getActivePitBorderColor() : style.getInactivePitBorderColor());
 		
 		Point2D.Double p1 = new Point2D.Double(gutterWidth, pitWidth / 2);
 		Point2D.Double p2 = new Point2D.Double(gutterWidth, getHeight() - pitWidth / 2);
@@ -114,8 +121,12 @@ class MancalaPit extends JPanel implements ChangeListener{
 		
 		for(Stone s: stones)
 		{
-			s.paintComponent(g2);
+			s.paintComponent(g);
 		}
+		
+		pitLabel.setForeground(Color.RED);
+		pitLabel.setFont(new Font("ARIAL", Font.BOLD, 60));
+		pitLabel.setText("" + stones.size());
 	}
 	
 	@Override
@@ -168,4 +179,5 @@ class MancalaPit extends JPanel implements ChangeListener{
 	private static Random random;
 	
 	private boolean active;
+	final JLabel pitLabel = new JLabel();
 }

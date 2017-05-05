@@ -1,18 +1,4 @@
 import java.awt.Color;
-<<<<<<< HEAD
-=======
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.GridLayout;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.geom.Ellipse2D;
-
-import javax.swing.BoxLayout;
-import javax.swing.Icon;
->>>>>>> branch 'iain' of https://github.com/MohsenHosseiniKhayat/CS151-Mancala-Project
 import javax.swing.ImageIcon;
 
 public class GUITest {
@@ -31,11 +17,7 @@ public class GUITest {
 		highContrast.setPitWidth(200);
 		highContrast.setPadding(2.0);
 
-<<<<<<< HEAD
 		board = new MancalaBoard(new MancalaModel(3), highContrast);	
-=======
-		MancalaBoard board = new MancalaBoard(new MancalaModel(3), highContrast);	
->>>>>>> branch 'iain' of https://github.com/MohsenHosseiniKhayat/CS151-Mancala-Project
 	}	
 
 }

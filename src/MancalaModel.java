@@ -441,6 +441,7 @@ public class MancalaModel
             _currentPlayer = _playerA;
             _endOfTurn = false;
         }
+        notifyPits();
     }
 
     /**

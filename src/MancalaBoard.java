@@ -22,10 +22,6 @@ public class MancalaBoard extends JFrame implements ChangeListener{
 
 	protected MancalaBoard(MancalaModel modelIn, BoardStyle styleIn)
 	{
-<<<<<<< HEAD
-=======
-		pits = new MancalaPit[2][7];
->>>>>>> branch 'iain' of https://github.com/MohsenHosseiniKhayat/CS151-Mancala-Project
 		style = styleIn;
 		model = modelIn;
 		model.attach(this);
@@ -34,9 +30,10 @@ public class MancalaBoard extends JFrame implements ChangeListener{
 		playerPits[1] = new ArrayList<MancalaPit>();
 
 		setupBoard();
-		
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		pack();
+		model.notifyPits();
 		setMinimumSize(new Dimension(getWidth() + 100, getHeight() + 100));
 		setVisible(true);
 	}
@@ -104,14 +101,11 @@ public class MancalaBoard extends JFrame implements ChangeListener{
 			mancalaPanel.add(pit, c);
 			playerPits[row].add(pit);
 		}
-		
 		mancalaPanel.setBorder(new StrokeBorder(new BasicStroke(1)));
 		
 		JPanel buttonPanel = new JPanel();
 		buttonPanel.setLayout(new FlowLayout());
 		
-		final JButton undoButton = new JButton("Undo Move");
-		final JButton endTurnButton = new JButton("End Turn");
 		
 		undoButton.addActionListener(new ActionListener()
         {
@@ -158,7 +152,6 @@ public class MancalaBoard extends JFrame implements ChangeListener{
 	
 	@Override
 	public void stateChanged(ChangeEvent e) {
-<<<<<<< HEAD
 		int thisRow = model.getCurrentPlayer().getRow();
 		int thatRow = (thisRow + 1) % 2;
 		for(MancalaPit mp : playerPits[thisRow])
@@ -174,17 +167,16 @@ public class MancalaBoard extends JFrame implements ChangeListener{
 		currentPlayerPanel.setBackground(thisRow == 0 ? Color.ORANGE : Color.PINK);
 		currentPlayerPanel.setLayout(new FlowLayout(thisRow == 0 ? FlowLayout.LEFT : FlowLayout.RIGHT));
 		
+		undoButton.setEnabled(model.getCurrentPlayer().canPlayerUndo());
+        endTurnButton.setEnabled(model.getEndOfTurn());
 	}
 
 	MancalaModel model;
-=======
-	}
-
-	MancalaModel model;
-	MancalaPit[][] pits;
->>>>>>> branch 'iain' of https://github.com/MohsenHosseiniKhayat/CS151-Mancala-Project
 	BoardStyle style;
 	ArrayList<MancalaPit>[] playerPits;
 	final JLabel currentPlayerLabel = new JLabel();
 	final JPanel currentPlayerPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+
+	final JButton undoButton = new JButton("Undo Move");
+	final JButton endTurnButton = new JButton("End Turn");
 }

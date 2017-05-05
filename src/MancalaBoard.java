@@ -7,10 +7,12 @@ import java.awt.GridBagLayout;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.StrokeBorder;
 import javax.swing.event.ChangeEvent;
@@ -23,6 +25,10 @@ public class MancalaBoard extends JFrame implements ChangeListener{
 		style = styleIn;
 		model = modelIn;
 		model.attach(this);
+		playerPits = new ArrayList[2];
+		playerPits[0] = new ArrayList<MancalaPit>();
+		playerPits[1] = new ArrayList<MancalaPit>();
+
 		setupBoard();
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -34,6 +40,9 @@ public class MancalaBoard extends JFrame implements ChangeListener{
 	private void setupBoard()
 	{
 		setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
+		
+		currentPlayerPanel.add(currentPlayerLabel);
+		this.add(currentPlayerPanel);
 		JPanel mancalaPanel = new JPanel();
 		mancalaPanel.setBackground(style.getBGColor());
 		mancalaPanel.setLayout(new GridBagLayout());
@@ -74,6 +83,7 @@ public class MancalaBoard extends JFrame implements ChangeListener{
 			MancalaPit pit = new MancalaPit(row, col, model, style);
 			model.attach(pit);
 			mancalaPanel.add(pit, c);
+			playerPits[row].add(pit);
 		}
 		
 		row = 1;
@@ -88,6 +98,7 @@ public class MancalaBoard extends JFrame implements ChangeListener{
             //Check this out please, I'm not sure if this is right
 			model.attach(pit);
 			mancalaPanel.add(pit, c);
+			playerPits[row].add(pit);
 		}
 		
 		mancalaPanel.setBorder(new StrokeBorder(new BasicStroke(1)));
@@ -97,7 +108,7 @@ public class MancalaBoard extends JFrame implements ChangeListener{
 		
 		final JButton undoButton = new JButton("Undo Move");
 		final JButton endTurnButton = new JButton("End Turn");
-
+		
 		undoButton.addActionListener(new ActionListener()
         {
             @Override
@@ -128,7 +139,7 @@ public class MancalaBoard extends JFrame implements ChangeListener{
             @Override
             public void stateChanged(ChangeEvent e)
             {
-                endTurnButton.setEnabled(!model.getEndOfTurn());
+                endTurnButton.setEnabled(model.getEndOfTurn());
             }
         });
 
@@ -143,11 +154,26 @@ public class MancalaBoard extends JFrame implements ChangeListener{
 	
 	@Override
 	public void stateChanged(ChangeEvent e) {
-		
+		int thisRow = model.getCurrentPlayer().getRow();
+		int thatRow = (thisRow + 1) % 2;
+		for(MancalaPit mp : playerPits[thisRow])
+		{
+			mp.setActive(true);
+		}
+		for(MancalaPit mp: playerPits[thatRow])
+		{
+			mp.setActive(false);
+		}
+
+		currentPlayerLabel.setText(thisRow == 0 ? "Player B" : "Player A");
+		currentPlayerPanel.setBackground(thisRow == 0 ? Color.ORANGE : Color.PINK);
+		currentPlayerPanel.setLayout(new FlowLayout(thisRow == 0 ? FlowLayout.LEFT : FlowLayout.RIGHT));
 		
 	}
 
 	MancalaModel model;
 	BoardStyle style;
-	
+	ArrayList<MancalaPit>[] playerPits;
+	final JLabel currentPlayerLabel = new JLabel();
+	final JPanel currentPlayerPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
 }

@@ -64,12 +64,12 @@ public class MancalaModel
     public void takeTurn(Player player,int row, int column)
     {
         traverseBoard(row, column);
-        notifyPits();
+
         //Let the current player undo
         player.setCanUndo(true);
         // Flip flag to signal end of turn;
-        _endOfTurn = !_endOfTurn;
-
+        _endOfTurn = true;
+        notifyPits();
         //TODO CHANGE PLAYERS
         // I think we need to call switchPlayers() after the player clicks the End turn button
         // which would set the _currentPlayer to the other player
@@ -155,7 +155,7 @@ public class MancalaModel
         if (column == -1)
         {
             //get another turn
-            _endOfTurn = true;
+            _endOfTurn = false;
             return;
         }
 
@@ -169,7 +169,6 @@ public class MancalaModel
             _mancalaBoard[row+1][5-column] = 0;
             _mancalaBoard[0][6] = stonesPickedUp;
             stonesPickedUp = 0;
-
         }
 
         /*Pit is not empty, pick up stones inside and continue
@@ -227,7 +226,7 @@ public class MancalaModel
         if (column == -1)
         {
             //Player gets to have another turn
-            _endOfTurn = true;
+            _endOfTurn = false;
             return;
         }
 
@@ -430,6 +429,7 @@ public class MancalaModel
 
             //Then change the player
             _currentPlayer = _playerB;
+            _endOfTurn = false;
         }
         else
         {
@@ -439,6 +439,7 @@ public class MancalaModel
 
             //Then change the player
             _currentPlayer = _playerA;
+            _endOfTurn = false;
         }
     }
 
@@ -469,9 +470,7 @@ public class MancalaModel
 
     /**
      * Adds a pit listener for the corresponding element in the board
-     * @param pit The listener to add
-     * @param row The row index
-     * @param column The column index
+     * @param cl The listener to add
      */
     public void attach(ChangeListener cl)
     {

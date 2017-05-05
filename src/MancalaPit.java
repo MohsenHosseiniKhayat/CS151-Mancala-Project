@@ -58,6 +58,11 @@ class MancalaPit extends JPanel implements ChangeListener{
 							System.out.printf("Clicked:\nRow: %d, Column: %d\n", row, col);
 							model.takeTurn(model.getCurrentPlayer(), row, col);
 							System.out.print(model.toString());
+							if (model.getTotalStonesCount() != 36)
+							{
+								System.out.println("######################################");
+							}
+							System.out.println(model.getTotalStonesCount());
 						}
 					}
 				});

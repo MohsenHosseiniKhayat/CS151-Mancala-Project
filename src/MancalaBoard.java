@@ -1,4 +1,5 @@
 import java.awt.BasicStroke;
+import java.awt.Button;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -95,8 +96,7 @@ public class MancalaBoard extends JFrame implements ChangeListener{
 		JPanel buttonPanel = new JPanel();
 		buttonPanel.setLayout(new FlowLayout());
 		
-		final JButton undoButton = new JButton("Undo Move");
-		final JButton endTurnButton = new JButton("End Turn");
+
 
 		undoButton.addActionListener(new ActionListener()
         {
@@ -104,14 +104,6 @@ public class MancalaBoard extends JFrame implements ChangeListener{
             public void actionPerformed(ActionEvent e)
             {
                 model.undoLastMove();
-            }
-        });
-		undoButton.addChangeListener(new ChangeListener()
-        {
-            @Override
-            public void stateChanged(ChangeEvent e)
-            {
-                    undoButton.setEnabled(model.getCurrentPlayer().canPlayerUndo());
             }
         });
 
@@ -123,14 +115,7 @@ public class MancalaBoard extends JFrame implements ChangeListener{
                 model.switchPlayer();
             }
         });
-		endTurnButton.addChangeListener(new ChangeListener()
-        {
-            @Override
-            public void stateChanged(ChangeEvent e)
-            {
-                endTurnButton.setEnabled(model.getEndOfTurn());
-            }
-        });
+
 
 		undoButton.setEnabled(false);
 		buttonPanel.add(undoButton);
@@ -143,11 +128,13 @@ public class MancalaBoard extends JFrame implements ChangeListener{
 	
 	@Override
 	public void stateChanged(ChangeEvent e) {
-		
-		
+		undoButton.setEnabled(model.getCurrentPlayer().canPlayerUndo());
+		endTurnButton.setEnabled(model.getEndOfTurn());
 	}
 
 	MancalaModel model;
 	BoardStyle style;
+	final JButton undoButton = new JButton("Undo Move");
+	final JButton endTurnButton = new JButton("End Turn");
 	
 }

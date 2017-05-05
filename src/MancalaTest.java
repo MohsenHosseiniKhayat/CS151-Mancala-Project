@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 //import sun.java2d.pipe.SpanShapeRenderer;
 public class MancalaTest {
 	/*
     public static void main (String [] args)
 =======
+public class MancalaTest
+{
+    public static void main(String[] args)
+>>>>>>> branch 'master' of https://github.com/MohsenHosseiniKhayat/CS151-Mancala-Project
+=======
+import sun.java2d.pipe.SpanShapeRenderer;
+
 public class MancalaTest
 {
     public static void main(String[] args)
@@ -17,5 +25,8 @@ public class MancalaTest
        model.takeTurn(model.getCurrentPlayer(),0,2);
        System.out.println(model.getEndOfTurn());
     }
+<<<<<<< HEAD
     */
+=======
+>>>>>>> branch 'master' of https://github.com/MohsenHosseiniKhayat/CS151-Mancala-Project
 }

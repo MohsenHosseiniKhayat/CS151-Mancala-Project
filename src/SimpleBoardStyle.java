@@ -2,6 +2,10 @@ import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Shape;
 import java.awt.Stroke;
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'iain' of https://github.com/MohsenHosseiniKhayat/CS151-Mancala-Project
 import javax.swing.Icon;
 import javax.swing.border.Border;
 import javax.swing.border.StrokeBorder;

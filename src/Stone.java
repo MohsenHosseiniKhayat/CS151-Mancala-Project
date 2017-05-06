@@ -5,10 +5,6 @@ import java.awt.Graphics2D;
 import java.awt.Shape;
 import java.awt.geom.Ellipse2D;
 
-<<<<<<< HEAD
-=======
-import javax.swing.Icon;
->>>>>>> branch 'iain' of https://github.com/MohsenHosseiniKhayat/CS151-Mancala-Project
 import javax.swing.JComponent;
 
 public class Stone extends JComponent{
@@ -74,19 +70,10 @@ public class Stone extends JComponent{
 	public void paintComponent(Graphics g)
 	{
 		Graphics2D g2 = (Graphics2D) g;
-<<<<<<< HEAD
 		Ellipse2D.Double shape = new Ellipse2D.Double(x, y, width, height);
 		g2.setColor(fillColor);
 		g2.fill(shape);
 		g2.setColor(strokeColor);
 		g2.draw(shape);
-=======
-		g2.setColor(this.fillColor);
-		g2.fill(new Ellipse2D.Double(x, y, width, width));
-		g2.setStroke(new BasicStroke(5));
-		g2.setColor(this.strokeColor);
-		g2.draw(new Ellipse2D.Double(x, y, width, width));
-
->>>>>>> branch 'iain' of https://github.com/MohsenHosseiniKhayat/CS151-Mancala-Project
 	}
 }

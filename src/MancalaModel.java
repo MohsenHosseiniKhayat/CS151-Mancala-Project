@@ -174,6 +174,7 @@ public class MancalaModel
             {
                 System.out.println("Code 4");
             }
+            notifyPits();
             return;
         }
 
@@ -265,6 +266,7 @@ public class MancalaModel
             {
                 System.out.println("Code 9");
             }
+            notifyPits();
             return;
 
         }
@@ -285,7 +287,6 @@ public class MancalaModel
             {
                 System.out.println("Code 10");
             }
-
         }
 
         /*If the pit isnt empty, pick up all its stones and start
@@ -294,6 +295,7 @@ public class MancalaModel
         {                                                           //This rule is not in the project requirements
             traverseBoard(row, column);
         }*/
+        notifyPits();
     }
     
     /**
@@ -346,6 +348,7 @@ public class MancalaModel
             _endOfTurn = false;
             notifyPits();
         }
+        notifyPits();
     }
 
     /**

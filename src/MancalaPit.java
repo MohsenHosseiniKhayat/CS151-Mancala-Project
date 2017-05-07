@@ -3,6 +3,7 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Rectangle;
 import java.awt.RenderingHints;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -88,7 +89,7 @@ class MancalaPit extends JPanel implements ChangeListener{
 		g2.setBackground(style.getBGColor());
 		g2.clearRect(0, 0, this.getWidth(), this.getHeight());
 
-		g2.setStroke(style.getPitBorderStroke());
+		g2.setStroke(active ? style.getActivePitStroke() : style.getInactivePitStroke());
 		g2.setColor(active ? style.getActivePitBorderColor() : style.getInactivePitBorderColor());
 		
 		Point2D.Double p1 = new Point2D.Double(gutterWidth, pitWidth / 2);
@@ -108,7 +109,7 @@ class MancalaPit extends JPanel implements ChangeListener{
 		g2.draw(a1);
 		
 		Arc2D.Double a2 = new Arc2D.Double((double) gutterWidth,
-										   (double) this.getHeight() - pitWidth + gutterWidth,
+										   (double) getHeight() - pitWidth + gutterWidth,
 										   (double) pitWidth - 2 * gutterWidth,
 										   (double) pitWidth - 2 * gutterWidth,
 										   180.0, 
@@ -135,7 +136,8 @@ class MancalaPit extends JPanel implements ChangeListener{
 		stones = new ArrayList<Stone>();
 		for(int i = 0; i < model.getStonesAtPit(row, col); i++)
 		{
-			Stone stone = new Stone(0, 0, getWidth() / 5);
+			Stone stone = new Stone(style);
+			style.applyStyle(stone);
 			int d = (int) (random.nextDouble() * (getWidth() / 2 - stone.getWidth()));
 
 			double theta = random.nextDouble() * 2 * Math.PI;
@@ -167,6 +169,11 @@ class MancalaPit extends JPanel implements ChangeListener{
 	public void setActive(boolean value)
 	{
 		active = value;
+	}
+	
+	public boolean isEmpty()
+	{
+		return stones.size() == 0;
 	}
 	
 	//private int numStones;

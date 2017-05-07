@@ -1,25 +1,33 @@
 import java.awt.Color;
-import java.awt.Shape;
 import java.awt.Stroke;
-import javax.swing.Icon;
+import java.awt.geom.RectangularShape;
 
 public interface BoardStyle 
 {
-	public void		setBGColor(Color newBGColor);
-	public Color	getBGColor();
+	// pit border style
+	public void		setActivePitBorderStrokeWidth(int strokeWidthIn);
+	public void 	setInactivePitBorderStrokeWidth(int strokeWidthIn);
+	public void 	setPitBorderStrokeWidth(int strokeWidthIn);
 	
-	public void		setActivePitBorderColor(Color newPitBorderColor);
+	public Stroke	getActivePitStroke();
+	public Stroke 	getInactivePitStroke();
+	
+	public void		setActivePitBorderColor(Color pitBorderColorIn);
 	public Color	getActivePitBorderColor();
 	
-	public void		setInactivePitBorderColor(Color newPitBorderColor);
+	public void		setInactivePitBorderColor(Color pitBorderColorIn);
 	public Color	getInactivePitBorderColor();
 	
-	public void		setPitBorderStrokeWidth(int newStrokeWidth);
-	public Stroke	getPitBorderStroke();
+	// stone style
+	public void		setStoneStrokeColor(Color stoneStrokeColorIn);
+	public Color	getStoneStrokeColor();
+	public void 	setStoneFillColor(Color stoneFillColorIn);
+	public Color	getStoneFillColor();
+	public void 	setStoneStrokeWidth(int stoneStrokeWidthIn);
+	public int		getStoneStrokeWidth();
+	public RectangularShape	getStoneShape();
 	
-	public void		setStoneColor(Color newStoneColor);
-	public Color	getStoneColor();
-	
+	// board style
 	public void  	setPitWidth(int width);
 	public double	getPitWidth();
 	
@@ -28,5 +36,13 @@ public interface BoardStyle
 	public double	getPadding();
 	public void		setPadding(double padding);
 	
-	public Stone	getStone();
+	public void		setBGColor(Color BGColorIn);
+	public Color	getBGColor();
+	
+	public void		setPlayerAColor(Color PAColorIn);
+	public Color	getPlayerAColor();
+	public void		setPlayerBColor(Color PBColorIn);
+	public Color	getPlayerBColor();
+	
+	public void		applyStyle(Stone stone);
 }

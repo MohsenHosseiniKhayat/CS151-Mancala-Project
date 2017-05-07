@@ -3,6 +3,7 @@ import java.awt.Button;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 
@@ -34,6 +35,7 @@ public class MancalaBoard extends JFrame implements ChangeListener{
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		pack();
+		model.notifyPits();
 		setMinimumSize(new Dimension(getWidth() + 100, getHeight() + 100));
 		setVisible(true);
 	}
@@ -43,6 +45,7 @@ public class MancalaBoard extends JFrame implements ChangeListener{
 		setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
 		
 		currentPlayerPanel.add(currentPlayerLabel);
+		currentPlayerLabel.setFont(new Font("ARIAL", Font.BOLD, 48));
 		this.add(currentPlayerPanel);
 		JPanel mancalaPanel = new JPanel();
 		mancalaPanel.setBackground(style.getBGColor());
@@ -144,17 +147,21 @@ public class MancalaBoard extends JFrame implements ChangeListener{
 		
 		int thisRow = model.getCurrentPlayer().getRow();
 		int thatRow = (thisRow + 1) % 2;
-		for(MancalaPit mp : playerPits[thisRow])
+		if(model.getEndOfTurn())
 		{
-			mp.setActive(true);
+			// deactivate all pits and wait for player input (i.e. "end turn" or "undo")
+			for(MancalaPit mp : playerPits[0]){mp.setActive(false);}
+			for(MancalaPit mp : playerPits[1]){mp.setActive(false);}
 		}
-		for(MancalaPit mp: playerPits[thatRow])
+		else
 		{
-			mp.setActive(false);
+			// activate only the current player's pits
+			for(MancalaPit mp : playerPits[thisRow]){mp.setActive(mp.isEmpty() ? false : true);	}
+			for(MancalaPit mp: playerPits[thatRow]){mp.setActive(false);}
 		}
 
 		currentPlayerLabel.setText(thisRow == 0 ? "Player B" : "Player A");
-		currentPlayerPanel.setBackground(thisRow == 0 ? Color.ORANGE : Color.PINK);
+		currentPlayerPanel.setBackground(thisRow == 0 ? style.getPlayerBColor() : style.getPlayerAColor());
 		currentPlayerPanel.setLayout(new FlowLayout(thisRow == 0 ? FlowLayout.LEFT : FlowLayout.RIGHT));
 	}
 

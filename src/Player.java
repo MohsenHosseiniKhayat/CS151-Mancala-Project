@@ -1,5 +1,3 @@
-//import com.sun.org.apache.xpath.internal.functions.FuncFalse;
-
 import java.util.Arrays;
 
 /**
@@ -31,7 +29,7 @@ public class Player
     {
         boolean result = false;
         int stones = 0;
-        for (int i = 0; i<_pits.length; i++)
+        for (int i = 0; i<_pits.length-1; i++)
         {
             stones += _pits[i];
         }
@@ -51,6 +49,7 @@ public class Player
     public void setSide (int row, int [][] mancalaBoard)
     {
         _pits = mancalaBoard[row];
+        _mancalaStones = mancalaBoard[row][6];
     }
 
     /**
@@ -148,5 +147,15 @@ public class Player
     public boolean canPlayerUndo ()
     {
         return _canUndo;
+    }
+
+    public int getNumStonesOnSide ()
+    {
+        int remainingStones = 0;
+        for (int i = 0; i<6; i++)
+        {
+            remainingStones += _pits[i];
+        }
+        return remainingStones;
     }
 }

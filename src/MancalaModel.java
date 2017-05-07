@@ -72,6 +72,8 @@ public class MancalaModel
             player.setCanUndo(true);
         }
         notifyPits();
+        _playerA.setSide(_playerA.getRow(),_mancalaBoard);
+        _playerB.setSide(_playerB.getRow(),_mancalaBoard);
         //TODO CHANGE PLAYERS
         // I think we need to call switchPlayers() after the player clicks the End turn button
         // which would set the _currentPlayer to the other player
@@ -174,6 +176,7 @@ public class MancalaModel
             {
                 System.out.println("Code 4");
             }
+            _currentPlayer.setCanUndo(true);
             notifyPits();
             return;
         }
@@ -199,6 +202,7 @@ public class MancalaModel
         {                                                                   //This rule is not in the requirements of this project.
             traverseBoard(row,column);
         }*/
+        notifyPits();
     }
 
     /**
@@ -266,6 +270,7 @@ public class MancalaModel
             {
                 System.out.println("Code 9");
             }
+            _currentPlayer.setCanUndo(true);
             notifyPits();
             return;
 
@@ -287,6 +292,7 @@ public class MancalaModel
             {
                 System.out.println("Code 10");
             }
+
         }
 
         /*If the pit isnt empty, pick up all its stones and start
@@ -338,7 +344,6 @@ public class MancalaModel
             _playerA.incrementUndoCounter();
             _playerA.setCanUndo(false);
             _endOfTurn = false;
-            notifyPits();
         }
         else if (_currentPlayer == _playerB && _currentPlayer.getUndoCounter() < 3)
         {
@@ -346,7 +351,6 @@ public class MancalaModel
             _playerB.incrementUndoCounter();
             _playerB.setCanUndo(false);
             _endOfTurn = false;
-            notifyPits();
         }
         notifyPits();
     }
@@ -410,14 +414,26 @@ public class MancalaModel
 
     /**
      * Reports on the state of the game
-     * @param currentMancalaBoard The board as it stands right now
      * @return state The state of the game can be inProgress, Victory for player A or Victory for player B
      */
-    public boolean hasGameFinished (int [][] currentMancalaBoard)
+    public boolean hasGameFinished ()
     {
         boolean result = false;
         if (_playerA.sideIsEmpty() || _playerB.sideIsEmpty())
         {
+            int [][] endGame;
+            if (_playerA.sideIsEmpty())
+            {
+                _playerB.addToMancala(_playerB.getNumStonesOnSide());
+                 endGame = new int[][]{{0, 0, 0, 0, 0, 0, _playerB.getMancalaStones()}, {0, 0, 0, 0, 0, 0, _playerA.getMancalaStones()}};
+                 copyBoardFromTo(endGame,_mancalaBoard);
+            }
+            if (_playerB.sideIsEmpty())
+            {
+                _playerA.addToMancala(_playerA.getNumStonesOnSide());
+                endGame = new int[][]{{0, 0, 0, 0, 0, 0, _playerB.getMancalaStones()}, {0, 0, 0, 0, 0, 0, _playerA.getMancalaStones()}};
+                copyBoardFromTo(endGame,_mancalaBoard);
+            }
             if (_playerA.getMancalaStones() > _playerB.getMancalaStones())
             {
                 result = true;
@@ -425,6 +441,7 @@ public class MancalaModel
             }
             else
             {
+                result = true;
                 _gameState = GameState.playerBWon;
             }
         }
@@ -510,6 +527,8 @@ public class MancalaModel
         int[][] newBoard = {{a,a,a,a,a,a,0},{a,a,a,a,a,a,0}} ;
         _currentPlayer = _playerA;
         _gameState = GameState.gameInProgress;
+        
+        
         copyBoardFromTo(newBoard,_mancalaBoard);
         copyBoardFromTo(newBoard,_previousBoard);
 
@@ -522,7 +541,7 @@ public class MancalaModel
         _playerB.setUndoCounter(0);
 
         //Must notify observers
-        notifyPits();
+        //notifyPits();
     }
 
     /**

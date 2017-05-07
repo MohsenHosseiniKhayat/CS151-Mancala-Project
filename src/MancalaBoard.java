@@ -1,5 +1,4 @@
 import java.awt.BasicStroke;
-import java.awt.Button;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -9,12 +8,14 @@ import java.awt.GridBagLayout;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.StrokeBorder;
 import javax.swing.event.ChangeEvent;
@@ -32,7 +33,7 @@ public class MancalaBoard extends JFrame implements ChangeListener{
 		playerPits[1] = new ArrayList<MancalaPit>();
 
 		setupBoard();
-		
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		pack();
 		model.notifyPits();
@@ -104,14 +105,13 @@ public class MancalaBoard extends JFrame implements ChangeListener{
 			mancalaPanel.add(pit, c);
 			playerPits[row].add(pit);
 		}
-		
 		mancalaPanel.setBorder(new StrokeBorder(new BasicStroke(1)));
 		
 		JPanel buttonPanel = new JPanel();
 		buttonPanel.setLayout(new FlowLayout());
-		
 
 	
+
 		undoButton.addActionListener(new ActionListener()
         {
             @Override
@@ -142,6 +142,22 @@ public class MancalaBoard extends JFrame implements ChangeListener{
 	
 	@Override
 	public void stateChanged(ChangeEvent e) {
+		if(model.hasGameFinished())
+		{
+			if(model.getGameState() == GameState.playerAWon)
+			{
+				JOptionPane.showMessageDialog(this, "Player A won the game!", "Game Over", JOptionPane.PLAIN_MESSAGE);
+				dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
+				return;
+			}
+			else if (model.getGameState() == GameState.playerBWon)
+			{
+				JOptionPane.showMessageDialog(this, "Player B won the game!", "Game Over", JOptionPane.PLAIN_MESSAGE);
+				dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
+				return;
+			}
+		}
+		
 		undoButton.setEnabled(model.getCurrentPlayer().canPlayerUndo());
 		endTurnButton.setEnabled(model.getEndOfTurn());
 		
@@ -163,13 +179,17 @@ public class MancalaBoard extends JFrame implements ChangeListener{
 		currentPlayerLabel.setText(thisRow == 0 ? "Player B" : "Player A");
 		currentPlayerPanel.setBackground(thisRow == 0 ? style.getPlayerBColor() : style.getPlayerAColor());
 		currentPlayerPanel.setLayout(new FlowLayout(thisRow == 0 ? FlowLayout.LEFT : FlowLayout.RIGHT));
+		
+		undoButton.setEnabled(model.getCurrentPlayer().canPlayerUndo());
+        endTurnButton.setEnabled(model.getEndOfTurn());
 	}
 
 	MancalaModel model;
 	BoardStyle style;
-	final JButton undoButton = new JButton("Undo Move");
-	final JButton endTurnButton = new JButton("End Turn");
 	ArrayList<MancalaPit>[] playerPits;
 	final JLabel currentPlayerLabel = new JLabel();
 	final JPanel currentPlayerPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+
+	final JButton undoButton = new JButton("Undo Move");
+	final JButton endTurnButton = new JButton("End Turn");
 }

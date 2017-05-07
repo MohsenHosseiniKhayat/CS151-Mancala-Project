@@ -3,7 +3,6 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.Rectangle;
 import java.awt.RenderingHints;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -53,7 +52,6 @@ class MancalaPit extends JPanel implements ChangeListener{
 		}
 		
 		this.add(pitLabel);
-
 		
 		this.addMouseListener(new MouseAdapter()
 				{
@@ -83,8 +81,8 @@ class MancalaPit extends JPanel implements ChangeListener{
 		
 		g2.setRenderingHints(rh);
 		
-		double pitWidth = style.getPitWidth();
-		double gutterWidth = style.getGutterWidth();
+		pitWidth = style.getPitWidth();
+		gutterWidth = style.getGutterWidth();
 		
 		g2.setBackground(style.getBGColor());
 		g2.clearRect(0, 0, this.getWidth(), this.getHeight());
@@ -147,24 +145,6 @@ class MancalaPit extends JPanel implements ChangeListener{
 		}
 		paintComponent(getGraphics());
 	}
-	/*
-	/**
-	 * Returns the number of stones the mancala pit has and will draw
-	 * @param numStones The number of stones in the pit
-	 * /
-	public void setNumStones (int numStones)
-	{
-		this.numStones = numStones;
-	}
-	
-	
-
-	/**
-	 * Returns the number of stones in the mancala pit
-	 * @return numstones The number of stones in the mancala pit
-	 * /
-	public int getNumStones () {return numStones;}
-	 */
 	
 	public void setActive(boolean value)
 	{
@@ -187,4 +167,7 @@ class MancalaPit extends JPanel implements ChangeListener{
 	
 	private boolean active;
 	final JLabel pitLabel = new JLabel();
+	private double pitWidth;
+	private double gutterWidth;
+
 }

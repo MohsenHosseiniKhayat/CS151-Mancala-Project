@@ -145,24 +145,6 @@ class MancalaPit extends JPanel implements ChangeListener{
 		}
 		paintComponent(getGraphics());
 	}
-	/*
-	/**
-	 * Returns the number of stones the mancala pit has and will draw
-	 * @param numStones The number of stones in the pit
-	 * /
-	public void setNumStones (int numStones)
-	{
-		this.numStones = numStones;
-	}
-	
-	
-
-	/**
-	 * Returns the number of stones in the mancala pit
-	 * @return numstones The number of stones in the mancala pit
-	 * /
-	public int getNumStones () {return numStones;}
-	 */
 	
 	public void setActive(boolean value)
 	{

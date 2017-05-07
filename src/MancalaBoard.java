@@ -9,12 +9,14 @@ import java.awt.GridBagLayout;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.StrokeBorder;
 import javax.swing.event.ChangeEvent;
@@ -141,7 +143,24 @@ public class MancalaBoard extends JFrame implements ChangeListener{
 	
 	@Override
 	public void stateChanged(ChangeEvent e) {
-
+		if(model.hasGameFinished())
+		{
+			if(model.getGameState() == GameState.playerAWon)
+			{
+				JOptionPane.showMessageDialog(this, "Player A won the game!", "Game Over", JOptionPane.PLAIN_MESSAGE);
+				model.resetBoard();
+				dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
+				return;
+			}
+			else if (model.getGameState() == GameState.playerBWon)
+			{
+				JOptionPane.showMessageDialog(this, "Player B won the game!", "Game Over", JOptionPane.PLAIN_MESSAGE);
+				model.resetBoard();
+				dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
+				return;
+			}
+		}
+		
 		undoButton.setEnabled(model.getCurrentPlayer().canPlayerUndo());
 		endTurnButton.setEnabled(model.getEndOfTurn());
 		

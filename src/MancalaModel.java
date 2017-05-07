@@ -438,6 +438,7 @@ public class MancalaModel
             {
                 result = true;
                 _gameState = GameState.playerAWon;
+
             }
             else
             {

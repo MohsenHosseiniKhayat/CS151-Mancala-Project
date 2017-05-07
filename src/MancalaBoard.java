@@ -44,7 +44,6 @@ public class MancalaBoard extends JFrame implements ChangeListener{
 	private void setupBoard()
 	{
 		setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
-		
 		currentPlayerPanel.add(currentPlayerLabel);
 		currentPlayerLabel.setFont(new Font("ARIAL", Font.BOLD, 48));
 		this.add(currentPlayerPanel);
@@ -118,6 +117,7 @@ public class MancalaBoard extends JFrame implements ChangeListener{
             public void actionPerformed(ActionEvent e)
             {
                 model.undoLastMove();
+                model.notifyPits();
             }
         });
 

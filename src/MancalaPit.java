@@ -11,6 +11,7 @@ import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Stack;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -23,13 +24,13 @@ class MancalaPit extends JPanel implements ChangeListener{
 	 * @param row - the row of this pit
 	 * @param col
 	 */
-	public MancalaPit(final int row, final int col, final MancalaModel model, BoardStyle styleIn)
+	public MancalaPit(final int rowIn, final int colIn, final MancalaModel modelIn, BoardStyle styleIn)
 	{
-		this.row = row;
-		this.col = col;
-		this.model = model;
-		this.stones = new ArrayList<Stone>();
-		this.active = true;
+		row = rowIn;
+		col = colIn;
+		model = modelIn;
+		stones = new Stack<Stone>();
+		active = true;
 		
 		style = styleIn;	
 		random = new Random();
@@ -39,17 +40,6 @@ class MancalaPit extends JPanel implements ChangeListener{
 			setPreferredSize(new Dimension((int) pitWidth, (int) (2*pitWidth)));
 		else
 			setPreferredSize(new Dimension((int) pitWidth, (int) pitWidth));
-		
-		for(int i = 0; i < model.getStonesAtPit(row, col); i++)
-		{
-			Stone stone = new Stone(0, 0, getWidth() / 5);
-			int d = (int) (random.nextDouble() * (getWidth() / 2 - stone.getWidth()));
-
-			double theta = random.nextDouble() * 2 * Math.PI;
-			stone.setX((int)(this.getWidth()  / 2 + d * Math.cos(theta) - stone.getWidth() / 2 - style.getGutterWidth()));
-			stone.setY((int)(this.getHeight() / 2 + d * Math.sin(theta) - stone.getWidth() / 2 - style.getGutterWidth()));
-			stones.add(stone);
-		}
 		
 		this.add(pitLabel);
 		
@@ -117,10 +107,17 @@ class MancalaPit extends JPanel implements ChangeListener{
 		
 		g2.draw(l1);
 		g2.draw(l2);
-		
-		for(Stone s: stones)
+
+		Stack<Stone> temp = new Stack<Stone>();
+		while(!stones.isEmpty())
 		{
-			s.paintComponent(g);
+			Stone tempStone = stones.pop();
+			tempStone.paintComponent(g2);
+			temp.push(tempStone);
+		}
+		while(!temp.isEmpty())
+		{
+			stones.push(temp.pop());
 		}
 		
 		pitLabel.setForeground(Color.RED);
@@ -130,19 +127,30 @@ class MancalaPit extends JPanel implements ChangeListener{
 	
 	@Override
 	public void stateChanged(ChangeEvent arg0) {
-		ArrayList<Stone> oldStones = stones;
-		stones = new ArrayList<Stone>();
-		for(int i = 0; i < model.getStonesAtPit(row, col); i++)
+		while(stones.size() > model.getStonesAtPit(row, col))
 		{
-			Stone stone = new Stone(style);
-			style.applyStyle(stone);
-			int d = (int) (random.nextDouble() * (getWidth() / 2 - stone.getWidth()));
-
-			double theta = random.nextDouble() * 2 * Math.PI;
-			stone.setX((int)(this.getWidth()  / 2 + d * Math.cos(theta) - stone.getWidth() / 2 - style.getGutterWidth()));
-			stone.setY((int)(this.getHeight() / 2 + d * Math.sin(theta) - stone.getWidth() / 2 - style.getGutterWidth()));
-			stones.add(stone);
+			stones.pop();
 		}
+		while(stones.size() < model.getStonesAtPit(row, col))
+		{
+			if(hand.isEmpty())
+			{
+				Stone stone = new Stone(style);
+				style.applyStyle(stone);
+				
+				int d = (int) (random.nextDouble() * (getWidth() / 2 - stone.getWidth()));
+				double theta = random.nextDouble() * 2 * Math.PI;
+				stone.setX((int)(this.getWidth()  / 2 + d * Math.cos(theta) - stone.getWidth() / 2 - style.getGutterWidth()));
+				stone.setY((int)(this.getHeight() / 2 + d * Math.sin(theta) - stone.getWidth() / 2 - style.getGutterWidth()));
+				stones.push(stone);
+			}
+			else
+			{
+				stones.push(hand.pop());
+			}
+		}
+		if(init) {init = !init;}
+
 		paintComponent(getGraphics());
 	}
 	
@@ -153,7 +161,7 @@ class MancalaPit extends JPanel implements ChangeListener{
 	
 	public boolean isEmpty()
 	{
-		return stones.size() == 0;
+		return stones.size() == 0 && !init;
 	}
 	
 	//private int numStones;
@@ -162,12 +170,16 @@ class MancalaPit extends JPanel implements ChangeListener{
 	private int id;
 	private MancalaModel model;
 	private BoardStyle style;
-	private ArrayList<Stone> stones;
+	//private ArrayList<Stone> stones;
+	private Stack<Stone> stones;
 	private static Random random;
 	
 	private boolean active;
 	final JLabel pitLabel = new JLabel();
 	private double pitWidth;
 	private double gutterWidth;
+	private boolean init = true;
+	
+	private static Stack<Stone> hand = new Stack<Stone>();
 
 }

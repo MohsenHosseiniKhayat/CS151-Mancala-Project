@@ -1,7 +1,9 @@
 import java.awt.Color;
 import java.awt.Dimension;
-
-import java.awt.*;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.RenderingHints;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.geom.Arc2D;
@@ -36,7 +38,7 @@ class MancalaPit extends JPanel implements ChangeListener{
 		if(col == 7)
 			setPreferredSize(new Dimension((int) pitWidth, (int) (2*pitWidth)));
 		else
-			setPreferredSize(new Dimension((int) pitWidth, (int) pitWidth));	
+			setPreferredSize(new Dimension((int) pitWidth, (int) pitWidth));
 		
 		for(int i = 0; i < model.getStonesAtPit(row, col); i++)
 		{
@@ -61,6 +63,11 @@ class MancalaPit extends JPanel implements ChangeListener{
 							//System.out.printf("Clicked:\nRow: %d, Column: %d\n", row, col);
 							model.takeTurn(model.getCurrentPlayer(), row, col);
 							System.out.print(model.toString());
+							if (model.getTotalStonesCount() != 36)
+							{
+								System.out.println("######################################");
+							}
+							System.out.println(model.getTotalStonesCount());
 						}
 					}
 				});
@@ -73,13 +80,14 @@ class MancalaPit extends JPanel implements ChangeListener{
 											   RenderingHints.VALUE_ANTIALIAS_ON);
 		
 		g2.setRenderingHints(rh);
-
+		
 		pitWidth = style.getPitWidth();
 		gutterWidth = style.getGutterWidth();
 		
-		g2.clearRect(0, 0, getWidth(), getHeight());
+		g2.setBackground(style.getBGColor());
+		g2.clearRect(0, 0, this.getWidth(), this.getHeight());
 
-		g2.setStroke(style.getPitBorderStroke());
+		g2.setStroke(active ? style.getActivePitStroke() : style.getInactivePitStroke());
 		g2.setColor(active ? style.getActivePitBorderColor() : style.getInactivePitBorderColor());
 		
 		Point2D.Double p1 = new Point2D.Double(gutterWidth, pitWidth / 2);
@@ -99,7 +107,7 @@ class MancalaPit extends JPanel implements ChangeListener{
 		g2.draw(a1);
 		
 		Arc2D.Double a2 = new Arc2D.Double((double) gutterWidth,
-										   (double) this.getHeight() - pitWidth + gutterWidth,
+										   (double) getHeight() - pitWidth + gutterWidth,
 										   (double) pitWidth - 2 * gutterWidth,
 										   (double) pitWidth - 2 * gutterWidth,
 										   180.0, 
@@ -126,7 +134,8 @@ class MancalaPit extends JPanel implements ChangeListener{
 		stones = new ArrayList<Stone>();
 		for(int i = 0; i < model.getStonesAtPit(row, col); i++)
 		{
-			Stone stone = new Stone(0, 0, getWidth() / 5);
+			Stone stone = new Stone(style);
+			style.applyStyle(stone);
 			int d = (int) (random.nextDouble() * (getWidth() / 2 - stone.getWidth()));
 
 			double theta = random.nextDouble() * 2 * Math.PI;
@@ -160,6 +169,11 @@ class MancalaPit extends JPanel implements ChangeListener{
 		active = value;
 	}
 	
+	public boolean isEmpty()
+	{
+		return stones.size() == 0;
+	}
+	
 	//private int numStones;
 	private int row;
 	private int col;
@@ -173,4 +187,5 @@ class MancalaPit extends JPanel implements ChangeListener{
 	final JLabel pitLabel = new JLabel();
 	private double pitWidth;
 	private double gutterWidth;
+
 }

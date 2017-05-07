@@ -1,7 +1,9 @@
 import java.awt.BasicStroke;
+import java.awt.Button;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 
@@ -43,6 +45,7 @@ public class MancalaBoard extends JFrame implements ChangeListener{
 		setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
 		
 		currentPlayerPanel.add(currentPlayerLabel);
+		currentPlayerLabel.setFont(new Font("ARIAL", Font.BOLD, 48));
 		this.add(currentPlayerPanel);
 		JPanel mancalaPanel = new JPanel();
 		mancalaPanel.setBackground(style.getBGColor());
@@ -105,22 +108,15 @@ public class MancalaBoard extends JFrame implements ChangeListener{
 		
 		JPanel buttonPanel = new JPanel();
 		buttonPanel.setLayout(new FlowLayout());
-		
-		
+
+	
+
 		undoButton.addActionListener(new ActionListener()
         {
             @Override
             public void actionPerformed(ActionEvent e)
             {
                 model.undoLastMove();
-            }
-        });
-		undoButton.addChangeListener(new ChangeListener()
-        {
-            @Override
-            public void stateChanged(ChangeEvent e)
-            {
-                    undoButton.setEnabled(model.getCurrentPlayer().canPlayerUndo());
             }
         });
 
@@ -132,14 +128,7 @@ public class MancalaBoard extends JFrame implements ChangeListener{
                 model.switchPlayer();
             }
         });
-		endTurnButton.addChangeListener(new ChangeListener()
-        {
-            @Override
-            public void stateChanged(ChangeEvent e)
-            {
-                endTurnButton.setEnabled(model.getEndOfTurn());
-            }
-        });
+
 
 		undoButton.setEnabled(false);
 		buttonPanel.add(undoButton);
@@ -152,19 +141,27 @@ public class MancalaBoard extends JFrame implements ChangeListener{
 	
 	@Override
 	public void stateChanged(ChangeEvent e) {
+
+		undoButton.setEnabled(model.getCurrentPlayer().canPlayerUndo());
+		endTurnButton.setEnabled(model.getEndOfTurn());
+		
 		int thisRow = model.getCurrentPlayer().getRow();
 		int thatRow = (thisRow + 1) % 2;
-		for(MancalaPit mp : playerPits[thisRow])
+		if(model.getEndOfTurn())
 		{
-			mp.setActive(true);
+			// deactivate all pits and wait for player input (i.e. "end turn" or "undo")
+			for(MancalaPit mp : playerPits[0]){mp.setActive(false);}
+			for(MancalaPit mp : playerPits[1]){mp.setActive(false);}
 		}
-		for(MancalaPit mp: playerPits[thatRow])
+		else
 		{
-			mp.setActive(false);
+			// activate only the current player's pits
+			for(MancalaPit mp : playerPits[thisRow]){mp.setActive(mp.isEmpty() ? false : true);	}
+			for(MancalaPit mp: playerPits[thatRow]){mp.setActive(false);}
 		}
 
 		currentPlayerLabel.setText(thisRow == 0 ? "Player B" : "Player A");
-		currentPlayerPanel.setBackground(thisRow == 0 ? Color.ORANGE : Color.PINK);
+		currentPlayerPanel.setBackground(thisRow == 0 ? style.getPlayerBColor() : style.getPlayerAColor());
 		currentPlayerPanel.setLayout(new FlowLayout(thisRow == 0 ? FlowLayout.LEFT : FlowLayout.RIGHT));
 		
 		undoButton.setEnabled(model.getCurrentPlayer().canPlayerUndo());

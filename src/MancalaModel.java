@@ -64,11 +64,13 @@ public class MancalaModel
     public void takeTurn(Player player,int row, int column)
     {
         traverseBoard(row, column);
-
-        //Let the current player undo
-        player.setCanUndo(true);
         // Flip flag to signal end of turn;
-        _endOfTurn = true;
+        _endOfTurn = !_endOfTurn;
+        //Let the current player undo
+        if (_endOfTurn)
+        {
+            player.setCanUndo(true);
+        }
         notifyPits();
         //TODO CHANGE PLAYERS
         // I think we need to call switchPlayers() after the player clicks the End turn button
@@ -131,6 +133,10 @@ public class MancalaModel
                 row = 1;
                 column = -1;
                 stonesPickedUp--;
+                if (getTotalStonesCount() + stonesPickedUp != 36)
+                {
+                    System.out.println("Code 1");
+                }
             }
 
             //Player passes opponent's Mancala, skip it
@@ -138,6 +144,10 @@ public class MancalaModel
             {
                 row = 0;
                 column = 0;
+                if (getTotalStonesCount() + stonesPickedUp != 36)
+                {
+                    System.out.println("Code 2");
+                }
             }
 
             //Non mancala pit, drop a stone and continue
@@ -145,6 +155,10 @@ public class MancalaModel
             {
                _mancalaBoard[row][column]++;
                stonesPickedUp--;
+                if (getTotalStonesCount()+ stonesPickedUp != 36)
+                {
+                    System.out.println("Code 3");
+                }
             }
         }
 
@@ -155,20 +169,29 @@ public class MancalaModel
         if (column == -1)
         {
             //get another turn
-            _endOfTurn = false;
+            _endOfTurn = true;
+            if (getTotalStonesCount()+ stonesPickedUp != 36)
+            {
+                System.out.println("Code 4");
+            }
+            notifyPits();
             return;
         }
 
         //If there is only one stone in the pit
-        else if (_mancalaBoard[row][column] == 1)
+        else if (_mancalaBoard[row][column] == 1 && row == 0)
         {
             _mancalaBoard[row][column] = 0;
             stonesPickedUp = 1 + _mancalaBoard[row+1][5-column];
             //Pick up the one stone and the stones of the opposite pit
             //and drop them in player B's Mancala
             _mancalaBoard[row+1][5-column] = 0;
-            _mancalaBoard[0][6] = stonesPickedUp;
+            _mancalaBoard[0][6] += stonesPickedUp;
             stonesPickedUp = 0;
+            if (getTotalStonesCount() + stonesPickedUp!= 36)
+            {
+                System.out.println("Code 5");
+            }
         }
 
         /*Pit is not empty, pick up stones inside and continue
@@ -201,6 +224,10 @@ public class MancalaModel
                 row = 0;
                 column= -1;
                 stonesPickedUp--;
+                if (getTotalStonesCount() + stonesPickedUp!= 36)
+                {
+                    System.out.println("Code 6");
+                }
             }
 
             //Player A is passing over opponents Mancala, skips over it
@@ -209,6 +236,10 @@ public class MancalaModel
                 //Cycle to the row below
                 column = 0;
                 row = 1;
+                if (getTotalStonesCount()+ stonesPickedUp != 36)
+                {
+                    System.out.println("Code 7");
+                }
             }
 
             //Passing over a non mancala pit
@@ -217,6 +248,10 @@ public class MancalaModel
                 //Drop a stone and move on
                 _mancalaBoard[row][column]++;
                 stonesPickedUp--;
+                if (getTotalStonesCount()+ stonesPickedUp != 36)
+                {
+                    System.out.println("Code 8");
+                }
             }
         }
 
@@ -226,13 +261,19 @@ public class MancalaModel
         if (column == -1)
         {
             //Player gets to have another turn
-            _endOfTurn = false;
+            _endOfTurn = true;
+            if (getTotalStonesCount()+ stonesPickedUp != 36)
+            {
+                System.out.println("Code 9");
+            }
+            notifyPits();
             return;
+
         }
 
         //Last stone was placed into an empty pit
         // on the players own side
-        else if (_mancalaBoard[row][column] == 1)
+        else if (_mancalaBoard[row][column] == 1 && row == 1)
         {
             //Pick the last stone and all the stones
             // on the opposite side of that pit and place them into
@@ -240,9 +281,12 @@ public class MancalaModel
             _mancalaBoard[row][column] = 0;
             stonesPickedUp = 1 + _mancalaBoard[row - 1][5-column];
             _mancalaBoard[row - 1][5-column] = 0;
-            _mancalaBoard[1][6] = stonesPickedUp;
+            _mancalaBoard[1][6] += stonesPickedUp;
             stonesPickedUp = 0;
-
+            if (getTotalStonesCount()+ stonesPickedUp != 36)
+            {
+                System.out.println("Code 10");
+            }
         }
 
         /*If the pit isnt empty, pick up all its stones and start
@@ -251,6 +295,7 @@ public class MancalaModel
         {                                                           //This rule is not in the project requirements
             traverseBoard(row, column);
         }*/
+        notifyPits();
     }
     
     /**
@@ -292,6 +337,7 @@ public class MancalaModel
             copyBoardFromTo(_previousBoard,_mancalaBoard);
             _playerA.incrementUndoCounter();
             _playerA.setCanUndo(false);
+            _endOfTurn = false;
             notifyPits();
         }
         else if (_currentPlayer == _playerB && _currentPlayer.getUndoCounter() < 3)
@@ -299,8 +345,10 @@ public class MancalaModel
             copyBoardFromTo(_previousBoard,_mancalaBoard);
             _playerB.incrementUndoCounter();
             _playerB.setCanUndo(false);
+            _endOfTurn = false;
             notifyPits();
         }
+        notifyPits();
     }
 
     /**
@@ -421,25 +469,32 @@ public class MancalaModel
      */
     public void switchPlayer ()
     {
+        String str = "";
         if (_currentPlayer == _playerA)
         {
             //Reset their undo flag so they wont be able to immediately undo on their following turn
             _currentPlayer.setCanUndo(false);
+            _playerB.setCanUndo(false);
             _currentPlayer.setUndoCounter(0);
 
             //Then change the player
             _currentPlayer = _playerB;
+            str = "Player B's turn";
             _endOfTurn = false;
+            //notifyPits();
         }
         else
         {
             //Reset their undo flag so they wont be able to immediately undo on their following turn
             _currentPlayer.setCanUndo(false);
+            _playerA.setCanUndo(false);
             _currentPlayer.setUndoCounter(0);
 
             //Then change the player
             _currentPlayer = _playerA;
+            str = "Player A's turn";
             _endOfTurn = false;
+            //notifyPits();
         }
         notifyPits();
     }
@@ -522,5 +577,18 @@ public class MancalaModel
     	}
     	boardString += " A \n";
     	return boardString;
+    }
+
+    public int getTotalStonesCount ()
+    {
+        int result = 0;
+        for (int i = 0; i<2; i++)
+        {
+            for (int j = 0; j<7; j++)
+            {
+                result += _mancalaBoard[i][j];
+            }
+        }
+        return result;
     }
 }

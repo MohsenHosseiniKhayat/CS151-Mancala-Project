@@ -1,11 +1,14 @@
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Stroke;
-
 import java.awt.geom.Ellipse2D;
+import java.awt.geom.Rectangle2D;
 import java.awt.geom.RectangularShape;
+import java.awt.geom.RoundRectangle2D;
+import java.util.ArrayList;
+import java.util.Random;
 
-public class SimpleBoardStyle implements BoardStyle{
+public class FancyBoardStyle implements BoardStyle{
 	
 	// pit style
 	private	int		activePitStrokeWidth;
@@ -20,9 +23,10 @@ public class SimpleBoardStyle implements BoardStyle{
 	private Color	stoneStrokeColor;
 	private Color	stoneFillColor;
 	private int		stoneStrokeWidth;
+	private ArrayList<Color> stoneColors;
+	private ArrayList<RectangularShape> stoneShapes;
 	
 	// board style
-	
 	private double	pitWidth;
 	private double	gutterWidth;
 	private double  padding;
@@ -31,6 +35,22 @@ public class SimpleBoardStyle implements BoardStyle{
 	private Color	playerAColor;
 	private Color	playerBColor;
 
+	
+	private Random random;
+	
+	// constructors
+	public FancyBoardStyle()
+	{
+		stoneColors = new ArrayList<Color>();
+		stoneShapes = new ArrayList<RectangularShape>();
+		
+		// make sure that every style has at least one stone color and one stone shape
+		stoneColors.add(Color.DARK_GRAY);
+		stoneShapes.add(new Ellipse2D.Double());
+		
+		random = new Random();
+	}
+	
 	
 	
 	
@@ -102,10 +122,25 @@ public class SimpleBoardStyle implements BoardStyle{
 
 	@Override
 	public Color getStoneFillColor() 
-	{return stoneFillColor;}
+	{
+		int index = random.nextInt(stoneColors.size());
+		return stoneColors.get(index);
+	}
 	
 	public RectangularShape getStoneShape()
-	{return new Ellipse2D.Double();}
+	{
+		int index = random.nextInt(stoneShapes.size());
+		RectangularShape shape = (RectangularShape) stoneShapes.get(index).clone();
+		
+		double	scaleFactor = random.nextDouble() + 0.25;
+		double	stoneWidth = scaleFactor * (pitWidth - gutterWidth) / 5;
+		
+				scaleFactor = random.nextDouble() + 0.25;
+		double	stoneHeight = scaleFactor * (pitWidth - gutterWidth) / 5;
+		
+		shape.setFrame(new Rectangle2D.Double(0, 0, stoneWidth, stoneHeight));
+		return shape;
+	}
 	
 	@Override
 	public void setStoneStrokeWidth(int stoneStrokeWidthIn) 
@@ -114,6 +149,16 @@ public class SimpleBoardStyle implements BoardStyle{
 	@Override
 	public int getStoneStrokeWidth() 
 	{return stoneStrokeWidth;}
+	
+	public void addStoneShape(RectangularShape shapeIn)
+	{
+		stoneShapes.add(shapeIn);
+	}
+	
+	public void addStoneColor(Color colorIn)
+	{
+		stoneColors.add(colorIn);
+	}
 	
 	
 	//Board style
@@ -186,11 +231,8 @@ public class SimpleBoardStyle implements BoardStyle{
 
 	@Override
 	public void applyStyle(Stone stone) {
-		stone.setShape(new Ellipse2D.Double(0,0, pitWidth / 5, pitWidth / 5));
+		stone.setShape(getStoneShape());
 		stone.setStrokeColor(stoneStrokeColor);
-		stone.setFillColor(stoneFillColor);
+		stone.setFillColor(getStoneFillColor());
 	}
-
-
-
 }

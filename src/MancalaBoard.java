@@ -1,5 +1,4 @@
 import java.awt.BasicStroke;
-import java.awt.Button;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -148,14 +147,12 @@ public class MancalaBoard extends JFrame implements ChangeListener{
 			if(model.getGameState() == GameState.playerAWon)
 			{
 				JOptionPane.showMessageDialog(this, "Player A won the game!", "Game Over", JOptionPane.PLAIN_MESSAGE);
-				model.resetBoard();
 				dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
 				return;
 			}
 			else if (model.getGameState() == GameState.playerBWon)
 			{
 				JOptionPane.showMessageDialog(this, "Player B won the game!", "Game Over", JOptionPane.PLAIN_MESSAGE);
-				model.resetBoard();
 				dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
 				return;
 			}
